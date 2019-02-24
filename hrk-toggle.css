@@ -1,0 +1,168 @@
+/* hrk-toggle
+   Copyright 2019 Hugh Kern -- hkern0.com
+   MIT license -- https://opensource.org/licenses/MIT */
+
+/* responsive navbar */
+.hrk-toggle {
+    display: none;
+}
+.hrk-navbar-toggle:checked ~ .hrk-navbar-responsive {
+    display: flex;
+}
+.hrk-navbar-toggle + label:before {
+    display: block !important;
+}
+.hrk-navbar-perm, .hrk-navbar-toggle-label {
+    flex: 1 0;
+}
+.hrk-navbar-toggle + label {
+    display: inline;
+    cursor: pointer;
+    font-size: 1.5rem;
+    width: 1rem;
+    margin-left: 1rem;
+}
+.hrk-navbar-responsive {
+    display: none;
+    order: 5;
+    flex: 1 100%;
+    flex-direction: column;
+}
+.hrk-navbar-container {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+/* toggle */
+.hrk-tree-container {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+.hrk-toggle-label {
+    display: inline;
+    cursor: pointer;
+    font-size: 1.2rem;
+    width: 0.8rem;
+    align-self: flex-start;
+    margin: 0.1rem;
+    text-align: center;
+}
+.hrk-tree-root {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    -webkit-backface-visibility: hidden;
+    align-self: flex-start;
+    margin: .4rem .2rem .2rem 0;
+    max-width: 90%;
+}
+.hrk-tree-children {
+    display: none;
+    order: 5;
+    flex: 1 100%;
+    position: relative;
+    margin: .3rem 1rem 1rem 0.5rem;
+    padding: .5rem;
+    background: rgba(230,230,230,.9);
+    border-radius: .2rem 1rem .2rem 1rem;
+}
+.hrk-toggle:checked ~ .hrk-tree-root > .hrk-tree-children {
+    display: flex;
+    flex-direction: column;
+}
+/* default opener / closer is just text +/- */
+.hrk-toggle + label:before {
+    content: '+';
+}
+.hrk-toggle:checked + label:before {
+    content: '-';
+}
+/* toggle option: text-based carets */
+.hrk-toggle + label.hrk-toggle-textcaret:before {
+    content: ">";
+}
+.hrk-toggle:checked + label.hrk-toggle-textcaret:before {
+    content: "v";
+}
+/* toggle option: Font Awesome caret concept */
+.hrk-toggle + label.hrk-toggle-facaret:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f0da";
+}
+.hrk-toggle:checked + label.hrk-toggle-facaret:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f0d7";
+}
+/* toggle option: Font Awesome plus/minus +/- concept */
+.hrk-toggle + label.hrk-toggle-faplusminus {
+    font-size: .8rem;
+    margin-top: .5rem;
+}
+.hrk-toggle + label.hrk-toggle-faplusminus:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f067";
+}
+.hrk-toggle:checked + label.hrk-toggle-faplusminus:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f068";
+}
+/* toggle option: Font Awesome burger/X concept */
+.hrk-toggle + label.hrk-toggle-faburgermenu:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f0c9";
+}
+.hrk-toggle:checked + label.hrk-toggle-faburgermenu:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f00d";
+}
+/* toggle option: Font Awesome vertical-ellipsis/X concept */
+.hrk-toggle + label.hrk-toggle-faextramenu:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f142";
+}
+.hrk-toggle:checked + label.hrk-toggle-faextramenu:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f00d";
+}
+
+/* media query goes responsive */
+@media screen and (min-width: 80rem) { /* 960px */
+    .hrk-navbar-container {
+        flex-flow: row;
+        padding-bottom: 0;
+    }
+    .hrk-navbar-responsive {
+        display: flex;
+        flex-basis: auto;
+        order: 4;
+        flex-direction: row;
+    }
+    .hrk-navbar-responsive > .hrk-tree-container:hover > .hrk-tree-root > .hrk-tree-children {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+    }
+    .hrk-navbar-toggle-label {
+        display: none !important;
+    }
+    .hrk-tree-children {
+        position: absolute;
+    }
+    .hrk-tree-children .hrk-tree-children {
+        position: relative;
+        flex: 1 100%;
+    }
+    .hrk-tree-children .hrk-tree-container {
+        width: 15rem;
+    }
+}
