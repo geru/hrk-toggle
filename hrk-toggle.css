@@ -49,26 +49,29 @@
     margin: 0.1rem;
     text-align: center;
 }
-.hrk-tree-root {
+.hrk-tree-node, .hrk-tree-leaf {
     display: inline-block;
     position: relative;
     vertical-align: middle;
     -webkit-backface-visibility: hidden;
     align-self: flex-start;
-    margin: .4rem .2rem .2rem 0;
+    margin: .4rem .2rem .2rem 0rem;
     max-width: 90%;
+}
+.hrk-tree-leaf {
+    margin-left: 1rem;
 }
 .hrk-tree-children {
     display: none;
     order: 5;
     flex: 1 100%;
     position: relative;
-    margin: .3rem 1rem 1rem 0.5rem;
+    margin: .3rem 1rem 0rem 0.5rem;
     padding: .5rem;
     background: rgba(230,230,230,.9);
     border-radius: .2rem 1rem .2rem 1rem;
 }
-.hrk-toggle:checked ~ .hrk-tree-root > .hrk-tree-children {
+.hrk-toggle:checked ~ .hrk-tree-node > .hrk-tree-children {
     display: flex;
     flex-direction: column;
 }
@@ -147,7 +150,7 @@
         order: 4;
         flex-direction: row;
     }
-    .hrk-navbar-responsive > .hrk-tree-container:hover > .hrk-tree-root > .hrk-tree-children {
+    .hrk-navbar-responsive > .hrk-tree-container:hover > .hrk-tree-node > .hrk-tree-children {
         display: flex;
         flex-direction: column;
         position: absolute;
@@ -157,12 +160,17 @@
     }
     .hrk-tree-children {
         position: absolute;
+        top: 1.2rem; /* gets rid of gap when hovering */
     }
     .hrk-tree-children .hrk-tree-children {
         position: relative;
         flex: 1 100%;
+        top: -.3rem;
     }
     .hrk-tree-children .hrk-tree-container {
         width: 15rem;
+    }
+    .hrk-navbar-responsive > .hrk-tree-leaf {
+        margin-left: 0;
     }
 }
