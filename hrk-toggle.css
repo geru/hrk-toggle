@@ -110,13 +110,13 @@
 }
 
 /* toggle option: text-based carets */
-.hrk-toggle + label.hrk-toggle-fmt-textcaret:before {
-    content: ">";
+.hrk-toggle + label.hrk-toggle-fmt-x:before {
+    content: "x";
 }
-.hrk-toggle:checked + label.hrk-toggle-fmt-textcaret:before {
-    content: "v";
+.hrk-toggle:checked + label.hrk-toggle-fmt-x:before {
+    content: "x";
 }
-/* toggle option: Font Awesome caret concept */
+/* toggle option: Font Awesome caret concept
 .hrk-toggle + label.hrk-toggle-fmt-facaret:before {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
@@ -126,8 +126,8 @@
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     content: "\f0d7";
-}
-/* toggle option: Font Awesome plus/minus +/- concept */
+} */
+/* toggle option: Font Awesome plus/minus +/- concept
 .hrk-toggle + label.hrk-toggle-fmt-faplusminus {
     font-size: .8rem;
     margin-top: .5rem;
@@ -141,8 +141,8 @@
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     content: "\f068";
-}
-/* toggle option: Font Awesome burger/X concept */
+} */
+/* toggle option: Font Awesome burger/X concept
 .hrk-toggle + label.hrk-toggle-fmt-faburgermenu:before {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
@@ -152,8 +152,8 @@
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     content: "\f00d";
-}
-/* toggle option: Font Awesome vertical-ellipsis/X concept */
+} */
+/* toggle option: Font Awesome vertical-ellipsis/X concept
 .hrk-toggle + label.hrk-toggle-fmt-faextramenu:before {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
@@ -164,6 +164,7 @@
     font-weight: 900;
     content: "\f00d";
 }
+*/
 
 .hrk-toggle-close-menu {
     float: right;
