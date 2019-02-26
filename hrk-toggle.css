@@ -82,6 +82,33 @@
 .hrk-toggle:checked + label:before {
     content: '-';
 }
+/* hamburger */
+.hrk-toggle + label.hrk-toggle-fmt-divburger:before {
+    content: '';
+}
+.hrk-toggle:checked + label.hrk-toggle-fmt-divburger:before {
+    content: '';
+}
+
+.hrk-toggle-fmt-divburger > div {
+    width: 2rem;
+    height: 0.25rem;
+    background-color: #000;
+    border-radius: 4px;
+    margin: 0.4rem;
+    /*position: absolute;*/
+}
+.hrk-toggle:checked + label.hrk-toggle-fmt-divburger > div:nth-child(1) {
+    transform: translateY(.3rem) rotate(45deg);
+    transition: rotate .5s ease-in-out;
+}
+.hrk-toggle:checked + label.hrk-toggle-fmt-divburger > div:nth-child(2) {
+    display: none;
+}
+.hrk-toggle:checked + label.hrk-toggle-fmt-divburger > div:nth-child(3) {
+    transform: translateY(-.3rem) rotate(-45deg);
+}
+
 /* toggle option: text-based carets */
 .hrk-toggle + label.hrk-toggle-fmt-textcaret:before {
     content: ">";
