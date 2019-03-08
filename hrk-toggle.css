@@ -10,7 +10,7 @@
     display: flex;
     background: inherit;
     z-index: 10;
-    border-radius: 0 0 .5rem 0;
+    /* border-radius: 0 0 .5rem 0; */
     border: thin solid;
 }
 .hrk-navbar-toggle + label:before {
@@ -18,6 +18,13 @@
 }
 .hrk-navbar-perm, .hrk-navbar-toggle-label {
     flex: 1 0;
+}
+.hrk-navbar-end {
+    order: 100;
+}
+.hrk-flex-row {
+    display: flex;
+    flex-direction: row;
 }
 .hrk-navbar-toggle + label {
     display: inline;
@@ -40,8 +47,15 @@
     flex-flow: row wrap;
     align-items: center;
     position: relative;
+    background: rgba(250,250,250,.98)
 }
-
+.hrk-navbar-container a {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-decoration: none;
+}
+.hrk-navbar-container a:hover {
+    background: rgba(100,100,100,.1);
+}
 /* toggle */
 .hrk-tree-container {
     display: flex;
@@ -52,11 +66,12 @@
 .hrk-toggle-label {
     display: inline;
     cursor: pointer;
-    font-size: 1.2rem;
     width: 0.8rem;
     align-self: flex-start;
-    margin: 0.1rem;
+    margin: 0.5rem 0.1rem;
     text-align: center;
+    font-size: small;
+    color: #999;
 }
 .hrk-tree-node, .hrk-tree-leaf {
     display: inline-block;
@@ -67,17 +82,21 @@
     margin: .4rem .2rem .2rem 0rem;
 }
 .hrk-tree-leaf {
-    margin-left: 1rem;
+    margin-left: .5rem;
+    padding-left: .5rem;
+}
+.hrk-navbar-container > div > .hrk-tree-leaf {
+    margin-left: .5rem;
+    padding-left: .5rem;
 }
 .hrk-tree-children {
     display: none;
     order: 5;
     flex: 1 100%;
     position: relative;
-    margin: .3rem 1rem 0rem 0.5rem;
-    padding: .5rem;
-    background: rgba(230,230,230,.9);
-    border-radius: .2rem 1rem .2rem 1rem;
+    background: rgba(245,245,245,.98);
+    border: .1rem solid #eee;
+    /*border-radius: .2rem 1rem .2rem 1rem;*/
 }
 .hrk-toggle:checked ~ .hrk-tree-node > .hrk-tree-children {
     display: flex;
@@ -98,23 +117,24 @@
     content: '';
 }
 
-.hrk-toggle + label.hrk-toggle-fmt-divburger > div.menumenu {
+.hrk-toggle + label.hrk-toggle-fmt-divburger > div.hrk-burger-menu {
     font-size: x-small;
     font-weight: 900;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin-left: .4rem;
     color: black;
 }
-.hrk-toggle-fmt-divburger > div.menubar {
+.hrk-toggle-fmt-divburger > div.hrk-burger-bar {
     width: 1.7rem;
     height: 0.25rem;
     background-color: black;
     border-radius: 4px;
     /*position: absolute;*/
 }
-.hrk-toggle-fmt-divburger > div.menubar:nth-child(1) {
+.hrk-toggle-fmt-divburger > div.hrk-burger-bar:nth-child(1) {
     margin: 0.4rem 0.4rem 0.1rem 0.4rem;
 }
-.hrk-toggle-fmt-divburger > div.menubar:nth-child(3) {
+.hrk-toggle-fmt-divburger > div.hrk-burger-bar:nth-child(3) {
     margin: 0.1rem 0.4rem 0.4rem 0.4rem;
 }
 
@@ -123,11 +143,11 @@
     transform: translateY(.12rem) rotate(45deg);
     transition: rotate .5s ease-in-out;
 }
-.hrk-toggle:checked + label.hrk-toggle-fmt-divburger > div.menumenu {
+.hrk-toggle:checked + label.hrk-toggle-fmt-divburger > div.hrk-burger-menu {
     display: none;
 }
 .hrk-toggle:checked + label.hrk-toggle-fmt-divburger > div:nth-child(3) {
-    transform: translateY(-.2rem) rotate(-45deg);
+    transform: translateY(-.25rem) rotate(-45deg);
 }
 
 /* toggle option: text-based carets */
@@ -137,6 +157,7 @@
 .hrk-toggle:checked + label.hrk-toggle-fmt-x:before {
     content: "x";
 }
+
 /* toggle option: Font Awesome caret concept
 .hrk-toggle + label.hrk-toggle-fmt-facaret:before {
     font-family: "Font Awesome 5 Free";
@@ -217,13 +238,13 @@
     }
     .hrk-tree-children {
         position: absolute;
-        top: 1.2rem; /* gets rid of gap when hovering */
+        top: 1.3rem; /* gets rid of gap when hovering */
         width: 12rem;
     }
     .hrk-tree-children .hrk-tree-children {
         position: relative;
         flex: 1 100%;
-        top: -.3rem;
+        top: 0rem;
     }
     .hrk-tree-children .hrk-tree-container {
         width: 15rem;
@@ -233,5 +254,8 @@
     }
     .hrk-tree-node, .hrk-tree-leaf {
         max-width: 90%;
+    }
+    .hrk-navbar-container > div > .hrk-tree-container > .hrk-tree-node > .hrk-tree-children {
+        width: 15rem;
     }
 }
