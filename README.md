@@ -1,18 +1,18 @@
 # hrk-toggle
 
-hrk-toggle is a CSS-only library to generate responsive multi-level menus and tree-navigation structures. This means that it requires no Javascript, no Javascript libraries, no Jquery, no nothing to work.
+_hrk-toggle_ is a CSS-only library to generate responsive multi-level menus and tree-navigation structures. This means that it requires no Javascript, no Javascript libraries, no Jquery, no nothing to work.
 
 What it does take to work is HTML that is structured just so with classes in the right spots.
 
-hrk-toggle uses opener's and closers for each level and allows the parent item for each level to be accessed independently of the opening of its children.
+_hrk-toggle_ uses opener's and closers for each level and allows the parent item for each level to be accessed independently of the opening of its children.
 
-hrk-toggle has one single media query and is strictly css with no SASS, no SCSS, no LESS, no npm, no Bower, no Grunt, no nodejs task-runners, no Yarn, no Ruby gems.
+_hrk-toggle_ has one single media query and is strictly css with no SASS, no SCSS, no LESS, no npm, no Bower, no Grunt, no nodejs task-runners, no Yarn, no Ruby gems.
 
-hrk-toggle uses CSS Flex constructs and plays nicely with Flex-based CSS frameworks such as [UIkit](https://getuikit.com)
+_hrk-toggle_ uses CSS Flex constructs and plays nicely with flexbox-based CSS frameworks such as [UIkit](https://getuikit.com)
 
 ## Licensing
 
-
+MIT as shown in LICENSE.md
 
 ## How to install
 
@@ -59,6 +59,8 @@ These classes are commented by default because one of the guiding principles of 
 
 ### HTML
 
+The formatting shown below is just a shorthand pseudo-CSS for reading only. HTML must be properly formatted.
+
 #### Responsive Navbar
 
 The HTML to use this must be structured as follows:
@@ -73,7 +75,7 @@ The HTML to use this must be structured as follows:
 
 #### Menu and tree structures
 
-Structure each parent item like this (the formatting shown is just a shorthand CSS for reading only. You will have to format the HTML properly):
+Structure each parent item like this:
 
 ~~~
   .hrk-tree-container
@@ -95,4 +97,4 @@ Structure each parent item like this (the formatting shown is just a shorthand C
 
 ## Example
 
-See the example example.html for an example of usage.
+See __example.html__ for an example of usage.
