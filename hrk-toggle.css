@@ -104,9 +104,16 @@
 }
 /* default opener / closer is just text +/- */
 .hrk-toggle + label:before {
-    content: '+';
+    content: '►';
 }
 .hrk-toggle:checked + label:before {
+    content: '▼';
+}
+/* default opener / closer is just text +/- */
+.hrk-toggle + label.hrk-toggle-fmt-plusminus:before {
+    content: '+';
+}
+.hrk-toggle:checked + label.hrk-toggle-fmt-plusminus:before {
     content: '-';
 }
 /* hamburger */
