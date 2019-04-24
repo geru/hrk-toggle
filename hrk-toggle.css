@@ -235,7 +235,8 @@
         position: static;
         border: none !important;
     }
-    .hrk-navbar-responsive > .hrk-tree-container:hover > .hrk-tree-node > .hrk-tree-children {
+    .hrk-navbar-responsive > .hrk-tree-container:hover > .hrk-tree-node > .hrk-tree-children,
+    .hrk-tree-hoveropen > .hrk-tree-container:hover > .hrk-tree-node > .hrk-tree-children {
         display: flex;
         flex-direction: column;
         position: absolute;
