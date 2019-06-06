@@ -86,7 +86,7 @@
     padding-left: .5rem;
 }
 .hrk-navbar-container > div > .hrk-tree-leaf {
-    margin-left: .5rem;
+    margin-left: 1.5rem;
     padding-left: .5rem;
 }
 .hrk-tree-children {
@@ -94,6 +94,7 @@
     order: 5;
     flex: 1 100%;
     position: relative;
+    padding-left: 1rem;
     background: rgba(245,245,245,.98);
     border: .1rem solid #eee;
     /*border-radius: .2rem 1rem .2rem 1rem;*/
@@ -247,6 +248,7 @@
     .hrk-tree-children {
         position: absolute;
         top: 1.3rem; /* gets rid of gap when hovering */
+        left: -1rem;
         width: 12rem;
     }
     .hrk-tree-children .hrk-tree-children {
