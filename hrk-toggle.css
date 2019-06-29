@@ -52,9 +52,11 @@
 .hrk-navbar-container a {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-decoration: none;
+    display: inline-block;
 }
 .hrk-navbar-container a:hover {
     background: rgba(100,100,100,.1);
+    border-radius: .5rem;
 }
 /* toggle */
 .hrk-tree-container {
@@ -75,19 +77,24 @@
 }
 .hrk-tree-node, .hrk-tree-leaf {
     display: inline-block;
-    position: relative;
+    /* position: relative; */
     vertical-align: middle;
     -webkit-backface-visibility: hidden;
     align-self: flex-start;
-    margin: .4rem .2rem .2rem 0rem;
+    margin: .4rem .2rem .4rem 0;
+    padding-left: .3rem;
+    padding-right: .3rem;
 }
 .hrk-tree-leaf {
-    margin-left: .5rem;
-    padding-left: .5rem;
+    margin-left: .3rem;
 }
-.hrk-navbar-container > div > .hrk-tree-leaf {
-    margin-left: .5rem;
+.hrk-tree-leaf > * {
+    padding: .25rem .25rem .25rem .25rem;
+    width: 95%;
+}
+.hrk-navbar-container > div .hrk-tree-leaf {
     padding-left: .5rem;
+    width: 100%;
 }
 .hrk-tree-children {
     display: none;
@@ -97,6 +104,13 @@
     background: rgba(245,245,245,.98);
     border: .1rem solid #eee;
     /*border-radius: .2rem 1rem .2rem 1rem;*/
+}
+.hrk-navbar-responsive > .hrk-tree-container > .hrk-tree-node .hrk-tree-children {
+    max-width: 100%;
+    margin: auto;
+}
+.hrk-navbar-responsive > .hrk-tree-container > .hrk-tree-node > .hrk-tree-children {
+    border-radius: 0 0 .5rem .5rem;
 }
 .hrk-toggle:checked ~ .hrk-tree-node > .hrk-tree-children {
     display: flex;
@@ -135,7 +149,7 @@
     width: 1.7rem;
     height: 0.25rem;
     background-color: black;
-    border-radius: 4px;
+    border-radius: .25rem;
     /*position: absolute;*/
 }
 .hrk-toggle-fmt-divburger > div.hrk-burger-bar:nth-child(1) {
@@ -246,8 +260,8 @@
     }
     .hrk-tree-children {
         position: absolute;
-        top: 1.3rem; /* gets rid of gap when hovering */
-        width: 12rem;
+        /*top: 2.5px;*/
+        /* width: 12rem; */
     }
     .hrk-tree-children .hrk-tree-children {
         position: relative;
@@ -263,7 +277,8 @@
     .hrk-tree-node, .hrk-tree-leaf {
         max-width: 90%;
     }
-    .hrk-navbar-container > div > .hrk-tree-container > .hrk-tree-node > .hrk-tree-children {
+/*    .hrk-navbar-container > div > .hrk-tree-container > .hrk-tree-node > .hrk-tree-children {
         width: 15rem;
     }
+    */
 }
