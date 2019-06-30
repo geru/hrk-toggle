@@ -88,7 +88,7 @@
 .hrk-tree-leaf {
     margin-left: .3rem;
 }
-.hrk-tree-leaf > * {
+.hrk-tree-children .hrk-tree-leaf > *, .hrk-tree-children .hrk-tree-node > * {
     padding: .25rem .25rem .25rem .25rem;
     width: 95%;
 }
@@ -101,7 +101,7 @@
     order: 5;
     flex: 1 100%;
     position: relative;
-    padding-left: 1rem;
+    padding-left: .25rem;
     background: rgba(245,245,245,.98);
     border: .1rem solid #eee;
     /*border-radius: .2rem 1rem .2rem 1rem;*/
@@ -261,6 +261,7 @@
     }
     .hrk-tree-children {
         position: absolute;
+        /* left: -1rem; */
         /*top: 2.5px;*/
         /* width: 12rem; */
     }
@@ -269,13 +270,14 @@
         flex: 1 100%;
         top: 0rem;
     }
-    .hrk-tree-children .hrk-tree-container {
+/*    .hrk-tree-children .hrk-tree-container {
         width: 15rem;
     }
+    */
     .hrk-navbar-responsive > .hrk-tree-leaf {
         margin-left: 0;
     }
-    .hrk-tree-node, .hrk-tree-leaf {
+    .hrk-tree-children .hrk-tree-node, .hrk-tree-leaf {
         max-width: 90%;
     }
 /*    .hrk-navbar-container > div > .hrk-tree-container > .hrk-tree-node > .hrk-tree-children {
