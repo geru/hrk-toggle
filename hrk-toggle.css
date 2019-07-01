@@ -88,7 +88,7 @@
 .hrk-tree-leaf {
     margin-left: .3rem;
 }
-.hrk-tree-children .hrk-tree-leaf > *, .hrk-tree-children .hrk-tree-node > * {
+.hrk-tree-children > .hrk-tree-leaf > *, .hrk-tree-children > .hrk-tree-node > * {
     padding: .25rem .25rem .25rem .25rem;
     width: 95%;
 }
