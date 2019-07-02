@@ -3,37 +3,37 @@
    MIT license -- https://opensource.org/licenses/MIT */
 
 /* responsive navbar */
-.hrk-toggle {
+.hrk-toggle { /* the input checkbox or radio that a submenu is attached to. navbar toggle also gets hrk-navbar-toggle class */
     display: none;
 }
-.hrk-navbar-toggle:checked ~ .hrk-navbar-responsive {
+.hrk-navbar-toggle:checked ~ .hrk-navbar-responsive {  /* the responsive menu is labeled with class hrk-navbar-responsive */
     display: flex;
     background: inherit;
     z-index: 10;
     /* border-radius: 0 0 .5rem 0; */
     border: thin solid;
 }
-.hrk-navbar-toggle + label:before {
+.hrk-navbar-toggle + label:before { /* make sure the navbar toggle and label are a block */
     display: block !important;
 }
-.hrk-navbar-perm, .hrk-navbar-toggle-label {
+.hrk-navbar-perm, .hrk-navbar-toggle-label { /* nonresponsive parts of the menu are just flex */
     flex: 1 0;
 }
-.hrk-navbar-end {
+.hrk-navbar-end { /* move a navbar item to the end of the lst */
     order: 100;
 }
-.hrk-flex-row {
+.hrk-flex-row { /* define horizontal flex */
     display: flex;
     flex-direction: row;
 }
-.hrk-navbar-toggle + label {
+.hrk-navbar-toggle + label { /* give the navbar hamburger some size and margins and make the cursor point into */
     display: inline;
     cursor: pointer;
     font-size: 1.5rem;
     width: 1rem;
     margin-left: 1rem;
 }
-.hrk-navbar-responsive {
+.hrk-navbar-responsive { /* responsive menu disappears as standard and goes vertical for mobile first */
     display: none;
     order: 5;
     flex: 1 100%;
@@ -41,23 +41,54 @@
     position: absolute;
     top: 3rem;
     background: inherit;
+    width: 20rem;
 }
-.hrk-navbar-container {
+.hrk-navbar-container { /* the whole navbar w. responsive and non-responsive parts */
     display: flex;
     flex-flow: row wrap;
     align-items: center;
     position: relative;
     background: rgba(250,250,250,.98)
 }
-.hrk-navbar-container a {
+.hrk-navbar-responsive > .hrk-tree-container {
+    margin-right: 1rem;
+}
+.hrk-navbar-perm > .uk-dropdown ul {
+    list-style: none;
+}
+.hrk-navbar-perm > .uk-dropdown {
+    margin-right: 1rem;
+    margin-top: -.5rem;
+}
+.hrk-menu-active {
+    border-radius: .5rem;
+}
+.hrk-navbar-extramenu > a,
+.hrk-navbar-responsive > .hrk-tree-container > .hrk-tree-node > a,
+.hrk-navbar-perm > a { /* all navbar top bar links get look and feel */
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-decoration: none;
     display: inline-block;
+    padding: 0.5rem;
+    width: 100%;
 }
-.hrk-navbar-container a:hover {
+.hrk-navbar-perm > a:hover,
+.hrk-navbar-responsive > .hrk-tree-container > .hrk-tree-node > a:hover {
+    background: rgba(50, 50, 50, .4);
+    border-radius: .5rem;
+}
+.hrk-tree-node .hrk-tree-children a, .hrk-menu-text { /* all navbar lower bar links get look and feel */
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    padding: .5rem;
+}
+.hrk-tree-node .hrk-tree-children a:hover, .hrk-menu-text:hover {
     background: rgba(100,100,100,.1);
     border-radius: .5rem;
 }
+
 /* toggle */
 .hrk-tree-container {
     display: flex;
@@ -70,47 +101,32 @@
     cursor: pointer;
     width: 0.8rem;
     align-self: flex-start;
-    margin: 0.5rem 0.1rem;
+    padding: 0.5rem 0.1rem;
     text-align: center;
     font-size: small;
     color: #999;
 }
 .hrk-tree-node, .hrk-tree-leaf {
     display: inline-block;
-    /* position: relative; */
     vertical-align: middle;
     -webkit-backface-visibility: hidden;
     align-self: flex-start;
-    margin: .4rem .2rem .4rem 0;
-    padding-left: .3rem;
-    padding-right: .3rem;
-}
-.hrk-tree-leaf {
-    margin-left: .3rem;
-}
-.hrk-tree-children .hrk-tree-leaf > *, .hrk-tree-children .hrk-tree-node > * {
-    padding: .25rem .25rem .25rem .25rem;
-    width: 95%;
-}
-.hrk-navbar-container > div .hrk-tree-leaf {
-    padding-left: .5rem;
-    width: 100%;
+    width: 90%;
 }
 .hrk-tree-children {
     display: none;
     order: 5;
     flex: 1 100%;
     position: relative;
-    padding-left: .25rem;
     background: rgba(245,245,245,.98);
     border: .1rem solid #eee;
     /*border-radius: .2rem 1rem .2rem 1rem;*/
 }
-.hrk-navbar-responsive > .hrk-tree-container > .hrk-tree-node .hrk-tree-children {
-    max-width: 100%;
-    margin: auto;
+.hrk-tree-children > .hrk-tree-leaf {
+    margin-left: 1rem;
 }
-.hrk-navbar-responsive > .hrk-tree-container > .hrk-tree-node > .hrk-tree-children {
+.hrk-navbar-responsive > .hrk-tree-container > .hrk-tree-node > .hrk-tree-children,
+.hrk-navbar-perm > .uk-dropdown {
     border-radius: 0 0 .5rem .5rem;
 }
 .hrk-toggle:checked ~ .hrk-tree-node > .hrk-tree-children {
@@ -238,6 +254,10 @@
 
 /* media query goes responsive */
 @media screen and (min-width: 80rem) { /* 960px */
+    .hrk-navbar-extramenu > a,
+    .hrk-navbar-responsive > .hrk-tree-container > .hrk-tree-node > a { /* all navbar top bar links get look and feel */
+        width: auto;
+    }
     .hrk-navbar-container {
         flex-flow: row;
         padding-bottom: 0;
@@ -261,6 +281,7 @@
     }
     .hrk-tree-children {
         position: absolute;
+        width: 15rem;
         /* left: -1rem; */
         /*top: 2.5px;*/
         /* width: 12rem; */
@@ -274,11 +295,17 @@
         width: 15rem;
     }
     */
+    .hrk-tree-node, .hrk-tree-leaf {
+        width: auto;
+    }
     .hrk-navbar-responsive > .hrk-tree-leaf {
         margin-left: 0;
     }
     .hrk-tree-children .hrk-tree-node, .hrk-tree-leaf {
-        max-width: 90%;
+        width: 12.5rem;
+    }
+    .hrk-navbar-responsive > .hrk-tree-container > .hrk-tree-node .hrk-tree-node, .hrk-navbar-responsive > .hrk-tree-container > .hrk-tree-node .hrk-tree-leaf {
+        width: 90%;
     }
 /*    .hrk-navbar-container > div > .hrk-tree-container > .hrk-tree-node > .hrk-tree-children {
         width: 15rem;
