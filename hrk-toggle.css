@@ -101,7 +101,7 @@
     cursor: pointer;
     width: 0.8rem;
     align-self: flex-start;
-    padding: 0.5rem 0.1rem;
+    padding: 1rem 0.1rem;
     text-align: center;
     font-size: small;
     color: #999;
@@ -294,7 +294,7 @@
     }
     .hrk-tree-children {
         position: absolute;
-        width: 15rem;
+        width: 16rem;
         /* left: -1rem; */
         /*top: 2.5px;*/
         /* width: 12rem; */
@@ -314,11 +314,8 @@
     .hrk-navbar-responsive > .hrk-tree-leaf {
         margin-left: 0;
     }
-    .hrk-tree-children .hrk-tree-node, .hrk-tree-leaf {
+    .hrk-tree-children > .hrk-tree-container > .hrk-tree-node, .hrk-tree-children > .hrk-tree-container > .hrk-tree-leaf {
         width: 12.5rem;
-    }
-    .hrk-navbar-responsive > .hrk-tree-container > .hrk-tree-node .hrk-tree-node, .hrk-navbar-responsive > .hrk-tree-container > .hrk-tree-node .hrk-tree-leaf {
-        width: 90%;
     }
 /*    .hrk-navbar-container > div > .hrk-tree-container > .hrk-tree-node > .hrk-tree-children {
         width: 15rem;
