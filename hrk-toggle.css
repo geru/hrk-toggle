@@ -43,6 +43,8 @@
     background: inherit;
     width: 20rem;
     z-index: 1000;
+    padding-bottom: .5rem;
+    border-radius: 0 .5rem .5rem .5rem;
 }
 .hrk-navbar-container { /* the whole navbar w. responsive and non-responsive parts */
     display: flex;
@@ -267,7 +269,8 @@
 }
 
 /* media query goes responsive */
-@media screen and (min-width: 80rem) { /* 960px */
+@media screen and (min-width: 80rem) {
+    /* 960px */
     .hrk-navbar-extramenu > a,
     .hrk-navbar-responsive > .hrk-tree-container > .hrk-tree-node > a { /* all navbar top bar links get look and feel */
         width: auto;
@@ -283,6 +286,8 @@
         flex-direction: row;
         position: static;
         border: none !important;
+        padding-bottom: 0;
+        border-radius: 0;
     }
     .hrk-navbar-responsive > .hrk-tree-container:hover > .hrk-tree-node > .hrk-tree-children,
     .hrk-tree-hoveropen > .hrk-tree-container:hover > .hrk-tree-node > .hrk-tree-children {
@@ -301,9 +306,10 @@
     .hrk-tree-children .hrk-tree-children {
         position: relative;
         flex: 1 100%;
-        top: 0rem;
+        top: 0;
     }
-    .hrk-tree-node, .hrk-tree-leaf {
+    .hrk-tree-node, .hrk-tree-leaf,
+    .hrk-navbar-responsive > .hrk-tree-container > .hrk-tree-node > .hrk-menu-text { /* top-level inactive item */
         width: auto;
     }
     .hrk-navbar-responsive > .hrk-tree-leaf {
@@ -312,3 +318,4 @@
     .hrk-tree-children .hrk-tree-node, .hrk-tree-leaf {
         width: 13rem;
     }
+}
