@@ -67,8 +67,12 @@
     border-radius: 0 .5rem .5rem .5rem;
 }
 .hrk-navbar-extramenu > a,
-.hrk-navbar-responsive > .hrk-tree-container > .hrk-tree-node > a,
+.hrk-navbar-brand a,
 .hrk-navbar-perm > a { /* all navbar top bar links get look and feel */
+    padding: 1rem;
+    width: auto;
+}
+.hrk-navbar-responsive > .hrk-tree-container > .hrk-tree-node > a {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-decoration: none;
     display: inline-block;
@@ -76,6 +80,8 @@
     width: 15rem;
 }
 .hrk-navbar-perm > a:hover,
+.hrk-navbar-brand a:hover,
+.hrk-navbar-toggle-label:hover,
 .hrk-navbar-responsive > .hrk-tree-container > .hrk-tree-node > a:hover {
     background: rgba(50, 50, 50, .4);
     border-radius: 0 .5rem .5rem .5rem;
@@ -272,6 +278,7 @@
 @media screen and (min-width: 80rem) {
     /* 960px */
     .hrk-navbar-extramenu > a,
+    .hrk-navbar-brand a,
     .hrk-navbar-responsive > .hrk-tree-container > .hrk-tree-node > a { /* all navbar top bar links get look and feel */
         width: auto;
     }
@@ -317,5 +324,8 @@
     }
     .hrk-tree-children .hrk-tree-node, .hrk-tree-leaf {
         width: 13rem;
+    }
+    .hrk-navbar-extramenu {
+        order: 5;
     }
 }
