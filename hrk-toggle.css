@@ -23,9 +23,6 @@
     /* border-radius: 0 0 .5rem 0; */
     border: thin solid;
 }
-.hrk-bar-toggle:checked ~ .hrk-menu-grid.hrk-menu-grid-floatover {
-    position: sticky;
-}
 .hrk-bar-toggle + label:before { /* make sure the navbar toggle and label are a block */
     display: block !important;
 }
@@ -73,7 +70,7 @@
     position: relative;
     background: rgba(250,250,250,.98)
 }
-.hrk-menu-grid > .hrk-tree-container,
+.hrk-menu-grid > .hrk-tree-node,
 .hrk-menu-grid > .hrk-tree-leaf {
     margin-right: 1rem;
 }
@@ -93,7 +90,7 @@
     padding: 1rem;
     width: auto;
 }
-.hrk-menu-grid > .hrk-tree-container > .hrk-tree-node > a,
+.hrk-menu-grid > .hrk-tree-node > .hrk-tree-container > a,
 .hrk-menu-grid .hrk-tree-leaf > * {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-decoration: none;
@@ -105,24 +102,24 @@
 .hrk-bar-item a:hover,
 .hrk-menu-grid > .hrk-tree-leaf:hover,
 .hrk-bar-toggle-label:hover,
-.hrk-menu-grid > .hrk-tree-container > .hrk-tree-node > a:hover {
+.hrk-menu-grid > .hrk-tree-node > .hrk-tree-container > a:hover {
     background: rgba(50, 50, 50, .4);
     border-radius: 0 .5rem .5rem .5rem;
 }
-.hrk-tree-node .hrk-tree-children a, .hrk-menu-text { /* all navbar lower bar links get look and feel */
+.hrk-tree-container .hrk-tree-children a, .hrk-menu-text { /* all navbar lower bar links get look and feel */
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-decoration: none;
     display: inline-block;
     width: 14rem;
     padding: .5rem;
 }
-.hrk-tree-node .hrk-tree-children a:hover, .hrk-menu-text:hover {
+.hrk-tree-container .hrk-tree-children a:hover, .hrk-menu-text:hover {
     background: rgba(100,100,100,.1);
     border-radius: 0 .5rem .5rem .5rem;
 }
 
 /* toggle */
-.hrk-tree-container {
+.hrk-tree-node {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
@@ -138,7 +135,7 @@
     font-size: small;
     color: #999;
 }
-.hrk-tree-node, .hrk-tree-leaf {
+.hrk-tree-container, .hrk-tree-leaf {
     display: inline-block;
     vertical-align: middle;
     -webkit-backface-visibility: hidden;
@@ -149,7 +146,7 @@
     width: 15rem;
 }
 .hrk-menu-grid > .hrk-tree-leaf {
-    margin-left: .5rem;
+    margin-left: 1rem;
     margin-right: .5rem;
 }
 .hrk-tree-children {
@@ -160,11 +157,11 @@
     background: rgba(245,245,245,.98);
     border: .1rem solid #eee;
 }
-.hrk-menu-grid > .hrk-tree-container > .hrk-tree-node > .hrk-tree-children,
+.hrk-menu-grid > .hrk-tree-node > .hrk-tree-container > .hrk-tree-children,
 .hrk-bar-perm > .uk-dropdown {
     border-radius: 0 .5rem .5rem .5rem;
 }
-.hrk-toggle:checked ~ .hrk-tree-node > .hrk-tree-children {
+.hrk-toggle:checked ~ .hrk-tree-container > .hrk-tree-children {
     display: flex;
     flex-direction: column;
 }
@@ -308,7 +305,7 @@
     /* 960px */
     .hrk-bar-last > a,
     .hrk-bar-item a,
-    .hrk-menu-grid > .hrk-tree-container > .hrk-tree-node > a,
+    .hrk-menu-grid > .hrk-tree-node > .hrk-tree-container > a,
     .hrk-menu-grid .hrk-tree-leaf > * { /* all navbar top bar links get look and feel */
         width: auto;
     }
@@ -334,7 +331,7 @@
     .hrk-inline-responsive-menu > .hrk-menu-grid >  * {
         padding: .5rem;
     }
-    .hrk-menu-grid > .hrk-tree-container:hover > .hrk-tree-node > .hrk-tree-children {
+    .hrk-menu-grid > .hrk-tree-node:hover > .hrk-tree-container > .hrk-tree-children {
         display: flex;
         flex-direction: column;
         position: absolute;
@@ -353,10 +350,15 @@
         top: 0;
     }
     .hrk-tree-node, .hrk-tree-leaf,
-    .hrk-menu-grid > .hrk-tree-container > .hrk-tree-node > .hrk-menu-text { /* top-level inactive item */
+    .hrk-menu-grid > .hrk-tree-node > .hrk-tree-container > .hrk-menu-text { /* top-level inactive item */
         width: auto;
     }
-    .hrk-tree-children .hrk-tree-node /*, .hrk-tree-leaf*/ {
+    .hrk-menu-grid > .hrk-tree-leaf {
+        margin-left: .25rem;
+        margin-right: .5rem;
+    }
+
+    .hrk-tree-children .hrk-tree-container /*, .hrk-tree-leaf*/ {
         width: 13rem;
     }
     .hrk-bar-last {
