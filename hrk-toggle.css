@@ -2,19 +2,36 @@
    Copyright 2019 Hugh Kern -- hkern0.com
    MIT license -- https://opensource.org/licenses/MIT */
 
+/* generic helper classes */
+.hrk-float-left {
+    float: left;
+}
+.hrk-float-right {
+    float: right;
+}
+.hrk-display-inlineblock {
+    display: inline-block;
+}
+.hrk-flex-row { /* define horizontal flex */
+    display: flex;
+    flex-direction: row;
+}
+.hrk-margin-none {
+    margin: 0;
+}
+.hrk-margin-medium {
+    margin: 1rem;
+}
 /* responsive navbar */
 .hrk-toggle { /* the input checkbox or radio that a submenu is attached to. navbar toggle also gets hrk-bar-toggle class */
     display: none;
 }
-.hrk-bar-toggle:checked ~ .hrk-menu-grid {  /* the responsive menu is labeled with class hrk-menu-grid */
+.hrk-bar-toggle:checked ~ .hrk-menu {  /* the responsive menu is labeled with class hrk-menu */
     display: flex;
     background: inherit;
     z-index: 10;
     /* border-radius: 0 0 .5rem 0; */
     border: thin solid;
-}
-.hrk-bar-toggle:checked ~ .hrk-menu-grid.hrk-menu-grid-floatover {
-    position: sticky;
 }
 .hrk-bar-toggle + label:before { /* make sure the navbar toggle and label are a block */
     display: block !important;
@@ -24,10 +41,6 @@
 }
 .hrk-bar-last { /* move a navbar item to the end of the lst */
     order: 100;
-}
-.hrk-flex-row { /* define horizontal flex */
-    display: flex;
-    flex-direction: row;
 }
 .hrk-bar-toggle + label { /* give the navbar hamburger some size and margins and make the cursor point into */
     display: inline;
@@ -42,7 +55,7 @@
 .hrk-bar-toggle-label{
     padding: .5rem;
 }
-.hrk-menu-grid { /* responsive menu disappears as standard and goes vertical for mobile first */
+.hrk-menu { /* responsive menu disappears as standard and goes vertical for mobile first */
     display: none;
     order: 5;
     flex: 1 100%;
@@ -53,7 +66,7 @@
     padding-bottom: .5rem;
     border-radius: 0 .5rem .5rem .5rem;
 }
-.hrk-navbar-container > .hrk-menu-grid {
+.hrk-navbar-container > .hrk-menu {
     position: absolute;
     top: 3rem;
 }
@@ -64,8 +77,8 @@
     position: relative;
     background: rgba(250,250,250,.98)
 }
-.hrk-menu-grid > .hrk-tree-container,
-.hrk-menu-grid > .hrk-tree-leaf {
+.hrk-menu > .hrk-tree-container,
+.hrk-menu > .hrk-tree-leaf {
     margin-right: 1rem;
 }
 .hrk-bar-perm > .uk-dropdown ul {
@@ -79,13 +92,13 @@
     border-radius: 0 .5rem .5rem .5rem;
 }
 .hrk-bar-extramenu > a,
-.hrk-bar-icons a,
+.hrk-bar-item a,
 .hrk-bar-perm > a { /* all navbar top bar links get look and feel */
     padding: 1rem;
     width: auto;
 }
-.hrk-menu-grid > .hrk-tree-container > .hrk-tree-node > a,
-.hrk-menu-grid .hrk-tree-leaf > * {
+.hrk-menu > .hrk-tree-container > .hrk-tree-node > a,
+.hrk-menu .hrk-tree-leaf > * {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-decoration: none;
     display: inline-block;
@@ -93,10 +106,10 @@
     width: 15rem;
 }
 .hrk-bar-perm > a:hover, /* top-level items get hover highlighting */
-.hrk-bar-icons a:hover,
-.hrk-menu-grid > .hrk-tree-leaf:hover,
+.hrk-bar-item a:hover,
+.hrk-menu > .hrk-tree-leaf:hover,
 .hrk-bar-toggle-label:hover,
-.hrk-menu-grid > .hrk-tree-container > .hrk-tree-node > a:hover {
+.hrk-menu > .hrk-tree-container > .hrk-tree-node > a:hover {
     background: rgba(50, 50, 50, .4);
     border-radius: 0 .5rem .5rem .5rem;
 }
@@ -139,9 +152,15 @@
     margin-left: 1rem;
     width: 15rem;
 }
-.hrk-menu-grid > .hrk-tree-leaf {
-    margin-left: .5rem;
+.hrk-menu > .hrk-tree-leaf {
+    margin-left: 1rem;
     margin-right: .5rem;
+}
+.hrk-menu > *:first-child {
+    margin-left: 0;
+}
+.hrk-menu > *:last-child {
+    margin-right: 0;
 }
 .hrk-tree-children {
     display: none;
@@ -151,7 +170,7 @@
     background: rgba(245,245,245,.98);
     border: .1rem solid #eee;
 }
-.hrk-menu-grid > .hrk-tree-container > .hrk-tree-node > .hrk-tree-children,
+.hrk-menu > .hrk-tree-container > .hrk-tree-node > .hrk-tree-children,
 .hrk-bar-perm > .uk-dropdown {
     border-radius: 0 .5rem .5rem .5rem;
 }
@@ -298,16 +317,16 @@
 @media screen and (min-width: 80rem) {
     /* 960px */
     .hrk-bar-extramenu > a,
-    .hrk-bar-icons a,
-    .hrk-menu-grid > .hrk-tree-container > .hrk-tree-node > a,
-    .hrk-menu-grid .hrk-tree-leaf > * { /* all navbar top bar links get look and feel */
+    .hrk-bar-item a,
+    .hrk-menu > .hrk-tree-container > .hrk-tree-node > a,
+    .hrk-menu .hrk-tree-leaf > * { /* all navbar top bar links get look and feel */
         width: auto;
     }
     .hrk-navbar-container {
         flex-flow: row;
         padding-bottom: 0;
     }
-    .hrk-menu-grid {
+    .hrk-menu {
         display: flex;
         flex-basis: auto;
         order: 4;
@@ -318,14 +337,14 @@
         border-radius: 0;
         width: auto;
     }
-    .hrk-navbar-container > .hrk-menu-grid {
+    .hrk-navbar-container > .hrk-menu {
         position: static;
     }
 
-    .hrk-inline-responsive-menu > .hrk-menu-grid >  * {
+    .hrk-inline-responsive-menu > .hrk-menu >  * {
         padding: .5rem;
     }
-    .hrk-menu-grid > .hrk-tree-container:hover > .hrk-tree-node > .hrk-tree-children {
+    .hrk-menu > .hrk-tree-container:hover > .hrk-tree-node > .hrk-tree-children {
         display: flex;
         flex-direction: column;
         position: absolute;
@@ -344,7 +363,7 @@
         top: 0;
     }
     .hrk-tree-node, .hrk-tree-leaf,
-    .hrk-menu-grid > .hrk-tree-container > .hrk-tree-node > .hrk-menu-text { /* top-level inactive item */
+    .hrk-menu > .hrk-tree-container > .hrk-tree-node > .hrk-menu-text { /* top-level inactive item */
         width: auto;
     }
     .hrk-tree-children .hrk-tree-node /*, .hrk-tree-leaf*/ {
