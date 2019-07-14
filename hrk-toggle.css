@@ -29,7 +29,7 @@
 .hrk-bar-perm, .hrk-bar-toggle-label { /* nonresponsive parts of the menu are just flex */
     flex: 1 0;
 }
-.hrk-bar-end { /* move a navbar item to the end of the lst */
+.hrk-bar-last { /* move a navbar item to the end of the lst */
     order: 100;
 }
 .hrk-flex-row { /* define horizontal flex */
