@@ -27,6 +27,16 @@
 .hrk-toggle { /* the input checkbox or radio that a submenu is attached to. navbar toggle also gets hrk-bar-toggle class */
     display: none;
 }
+.hrk-toggle + label {
+    display: inline;
+    cursor: pointer;
+    width: 0.8rem;
+    align-self: flex-start;
+    padding: .5rem 0.1rem;
+    text-align: center;
+    font-size: small;
+    color: #999;
+}
 .hrk-bar-toggle:checked ~ .hrk-menu {  /* the responsive menu is labeled with class hrk-menu */
     display: flex;
     background: inherit;
@@ -133,16 +143,6 @@
     align-items: center;
     z-index: 10;
 }
-.hrk-toggle + label {
-    display: inline;
-    cursor: pointer;
-    width: 0.8rem;
-    align-self: flex-start;
-    padding: .5rem 0.1rem;
-    text-align: center;
-    font-size: small;
-    color: #999;
-}
 .hrk-tree-node, .hrk-leaf {
     display: inline-block;
     vertical-align: middle;
@@ -174,10 +174,10 @@
     flex-direction: column;
 }
 /* default opener / closer is just text +/- */
-.hrk-toggle + label:before {
+.hrk-toggle + label.hrk-toggle-fmt-caret:before {
     content: '►';
 }
-.hrk-toggle:checked + label:before {
+.hrk-toggle:checked + label.hrk-toggle-fmt-caret:before {
     content: '▼';
 }
 /* default opener / closer is just text +/- */
@@ -187,51 +187,70 @@
 .hrk-toggle:checked + label.hrk-toggle-fmt-plusminus:before {
     content: '-';
 }
+.hrk-toggle-fmt-burger:before {
+    content: "";
+    position: absolute;
+    top: 0.25em;
+    left: 0;
+    width: 1em;
+    height: 0.125em;
+    border-top: 0.375em double #000;
+    border-bottom: 0.125em solid #000;
+}
+.hrk-toggle:checked + label.hrk-toggle-fmt-burger:before {
+    content: 'X';
+    text-size: 1rem;
+    border-width: 0;
+}
 /* hamburger */
 .hrk-toggle + label.hrk-toggle-fmt-divburger:before {
-    content: '';
+    content: ' ';
 }
 .hrk-toggle:checked + label.hrk-toggle-fmt-divburger:before {
     content: '';
 }
 
-.hrk-toggle + label.hrk-toggle-fmt-divburger > div.hrk-burger-menu {
+.hrk-toggle-fmt-divburger {
+    padding: .5rem;
+}
+.hrk-burger-menu {
     font-size: x-small;
     font-weight: 900;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    margin-left: .4rem;
     color: black;
+    text-align: left;
+    vertical-align: center;
+    margin: auto;
 }
-.hrk-toggle-fmt-divburger > div.hrk-burger-bar {
+.hrk-burger-bar {
     width: 1.7rem;
     height: 0.25rem;
     background-color: black;
     border-radius: .25rem;
     /*position: absolute;*/
 }
-.hrk-toggle-fmt-divburger > * {
-    text-align: center;
-    vertical-align: center;
-    margin: auto;
-}
-
-
 .hrk-toggle:checked + label.hrk-toggle-fmt-divburger > div:nth-child(1) {
-    transform: translateY(.12rem) rotate(45deg);
-    transition: rotate .5s ease-in-out;
-}
-.hrk-toggle:checked + label.hrk-toggle-fmt-divburger > div.hrk-burger-menu {
     display: none;
+    /*transform: translateY(.12rem) rotate(45deg);
+    transition: rotate .5s ease-in-out;*/
+}
+.hrk-toggle + label.hrk-toggle-fmt-divburger > div.hrk-burger-menu:before {
+    content: 'menu';
+}
+.hrk-toggle:checked + label.hrk-toggle-fmt-divburger > div.hrk-burger-menu:before {
+    content: 'X';
+    font-size: 1rem;
 }
 .hrk-toggle:checked + label.hrk-toggle-fmt-divburger > div:nth-child(3) {
-    transform: translateY(-.25rem) rotate(-45deg);
+    display: none;
+    /*transform: translateY(-.25rem) rotate(-45deg); */
 }
 
 /* toggle option: text-based carets */
-.hrk-toggle + label.hrk-toggle-fmt-x:before {
-    content: "x";
+.hrk-toggle + label.hrk-toggle-fmt-menux:before {
+    content: "menu";
 }
-.hrk-toggle:checked + label.hrk-toggle-fmt-x:before {
+.hrk-toggle:checked + label.hrk-toggle-fmt-menux:before {
     content: "x";
 }
 
