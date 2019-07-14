@@ -1,0 +1,50 @@
+/** Font-awesome-based opener-closers for toggle-able stuff */
+
+/* toggle option: Font Awesome caret concept */
+.hrk-toggle + label.hrk-toggle-fmt-facaret:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f0da";
+}
+.hrk-toggle:checked + label.hrk-toggle-fmt-facaret:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f0d7";
+}
+/* toggle option: Font Awesome plus/minus +/- concept */
+.hrk-toggle + label.hrk-toggle-fmt-faplusminus {
+    font-size: .8rem;
+    margin-top: .5rem;
+}
+.hrk-toggle + label.hrk-toggle-fmt-faplusminus:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f067";
+}
+.hrk-toggle:checked + label.hrk-toggle-fmt-faplusminus:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f068";
+}
+/* toggle option: Font Awesome burger/X concept */
+.hrk-toggle + label.hrk-toggle-fmt-faburgermenu:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f0c9";
+}
+.hrk-toggle:checked + label.hrk-toggle-fmt-faburgermenu:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f00d";
+}
+/* toggle option: Font Awesome vertical-ellipsis/X concept */
+.hrk-toggle + label.hrk-toggle-fmt-faextramenu:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f142";
+}
+.hrk-toggle:checked + label.hrk-toggle-fmt-faextramenu:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f00d";
+}
