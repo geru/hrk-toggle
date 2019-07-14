@@ -22,6 +22,7 @@
 .hrk-margin-medium {
     margin: 1rem;
 }
+
 /* responsive navbar */
 .hrk-toggle { /* the input checkbox or radio that a submenu is attached to. navbar toggle also gets hrk-bar-toggle class */
     display: none;
@@ -66,11 +67,11 @@
     padding-bottom: .5rem;
     border-radius: 0 .5rem .5rem .5rem;
 }
-.hrk-navbar-container > .hrk-menu {
+.hrk-navbar > .hrk-menu {
     position: absolute;
     top: 3rem;
 }
-.hrk-navbar-container { /* the whole navbar w. responsive and non-responsive parts */
+.hrk-navbar { /* the whole navbar w. responsive and non-responsive parts */
     display: flex;
     flex-flow: row wrap;
     align-items: center;
@@ -322,7 +323,7 @@
     .hrk-menu .hrk-tree-leaf > * { /* all navbar top bar links get look and feel */
         width: auto;
     }
-    .hrk-navbar-container {
+    .hrk-navbar {
         flex-flow: row;
         padding-bottom: 0;
     }
@@ -337,12 +338,8 @@
         border-radius: 0;
         width: auto;
     }
-    .hrk-navbar-container > .hrk-menu {
+    .hrk-navbar > .hrk-menu {
         position: static;
-    }
-
-    .hrk-inline-responsive-menu > .hrk-menu >  * {
-        padding: .5rem;
     }
     .hrk-menu > .hrk-tree-container:hover > .hrk-tree-node > .hrk-tree-children {
         display: flex;
