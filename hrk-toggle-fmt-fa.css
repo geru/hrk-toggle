@@ -48,3 +48,67 @@
     font-weight: 900;
     content: "\f00d";
 }
+
+/* rejected as being too comples -> went to arbitrary on/off icons with svg
+.hrk-toggle-fmt-burger:before {
+    content: "";
+    position: absolute;
+    top: 0.25em;
+    left: 0;
+    width: 1em;
+    height: 0.125em;
+    border-top: 0.375em double #000;
+    border-bottom: 0.125em solid #000;
+}
+.hrk-toggle:checked + label.hrk-toggle-fmt-burger:before {
+    content: 'X';
+    text-size: 1rem;
+    border-width: 0;
+}
+/* hamburger *
+.hrk-toggle + label.hrk-toggle-fmt-divburger:before {
+    content: ' ';
+}
+.hrk-toggle:checked + label.hrk-toggle-fmt-divburger:before {
+    content: '';
+}
+
+.hrk-toggle-fmt-divburger {
+    padding: .5rem;
+}
+.hrk-burger-menu {
+    font-size: x-small;
+    font-weight: 900;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: black;
+    text-align: left;
+    vertical-align: center;
+    margin: auto;
+}
+.hrk-burger-bar {
+    width: 1.7rem;
+    height: 0.25rem;
+    background-color: black;
+    border-radius: .25rem;
+    /*position: absolute;*
+}
+.hrk-toggle:checked + label.hrk-toggle-fmt-divburger > div:nth-child(1) {
+    display: none;
+    /*transform: translateY(.12rem) rotate(45deg);
+    transition: rotate .5s ease-in-out;*
+}
+.hrk-toggle + label.hrk-toggle-fmt-divburger > div.hrk-burger-menu:before {
+    content: 'menu';
+}
+.hrk-toggle:checked + label.hrk-toggle-fmt-divburger > div.hrk-burger-menu:before {
+    content: 'X';
+    font-size: 1rem;
+}
+
+.hrk-toggle:checked + label.hrk-toggle-fmt-divburger > div:nth-child(3) {
+    display: none;
+    /*transform: translateY(-.25rem) rotate(-45deg); *
+}
+
+
+*/
