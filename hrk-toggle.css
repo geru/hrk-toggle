@@ -108,6 +108,9 @@
     padding: 1rem;
     width: auto;
 }
+.hrk-navbar > .hrk-bar-item, .hrk-navbar > .hrk-bar-perm {
+    height: 3rem;
+}
 .hrk-menu > .hrk-tree > .hrk-tree-node > a,
 .hrk-menu .hrk-leaf > * {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -144,8 +147,14 @@
 .hrk-tree {
     display: flex;
     flex-flow: row wrap;
-    align-items: center;
+    align-items: stretch;
     z-index: 10;
+}
+.hrk-navbar > .hrk-menu > .hrk-tree > .hrk-tree-node > a,
+.hrk-navbar > .hrk-menu > .hrk-tree > .hrk-tree-node > span,
+.hrk-navbar > .hrk-menu > .hrk-tree > label,
+.hrk-navbar > .hrk-menu > .hrk-tree > .hrk-tree-leav > * {
+    padding-top: 1rem;
 }
 .hrk-tree-node, .hrk-leaf {
     display: inline-block;
