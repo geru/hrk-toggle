@@ -12,43 +12,33 @@
 .hrk-display-inlineblock {
     display: inline-block;
 }
-/* responsive navbar */
-.hrk-toggle { /* the input checkbox or radio that a submenu is attached to. navbar toggle also gets hrk-bar-toggle class */
-    display: none;
-}
-.hrk-bar-toggle:checked ~ .hrk-menu-grid {  /* the responsive menu is labeled with class hrk-menu-grid */
-    display: flex;
-    background: inherit;
-    z-index: 10;
-    /* border-radius: 0 0 .5rem 0; */
-    border: thin solid;
-}
-.hrk-bar-toggle + label:before { /* make sure the navbar toggle and label are a block */
-    display: block !important;
-}
-.hrk-bar-perm, .hrk-bar-toggle-label { /* nonresponsive parts of the menu are just flex */
-    flex: 1 0;
-}
-.hrk-bar-last { /* move a navbar item to the end of the lst */
-    order: 100;
-}
 .hrk-flex-row { /* define horizontal flex */
     display: flex;
     flex-direction: row;
 }
-.hrk-bar-toggle + label { /* give the navbar hamburger some size and margins and make the cursor point into */
-    display: inline;
-    cursor: pointer;
-    font-size: 1.5rem;
-    /*width: 1rem;*/
-    padding-right: 1rem;
-    padding-left: 1rem;
-    margin-right: .25rem;
+.hrk-margin-none {
+    margin: 0;
 }
-.hrk-bar-toggle-label{
-    padding: .5rem;
+.hrk-margin-medium {
+    margin: 1rem;
 }
-.hrk-menu-grid { /* responsive menu disappears as standard and goes vertical for mobile first */
+
+/* responsive navbar */
+.hrk-bar {
+    display: flex;
+    flex-flow: row wrap;
+}
+.hrk-navbar { /* the whole navbar w. responsive and non-responsive parts */
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    position: relative;
+    background: rgba(250,250,250,.98)
+}
+.hrk-toggle { /* the input checkbox or radio that a submenu is attached to. navbar toggle also gets hrk-bar-toggle class */
+    display: none;
+}
+.hrk-menu { /* responsive menu disappears as standard and goes vertical for mobile first */
     display: none;
     order: 5;
     flex: 1 100%;
@@ -59,19 +49,47 @@
     padding-bottom: .5rem;
     border-radius: 0 .5rem .5rem .5rem;
 }
-.hrk-navbar-container > .hrk-menu-grid {
+.hrk-toggle + label {
+    display: inline;
+    cursor: pointer;
+    width: 0.8rem;
+    align-self: flex-start;
+    padding: .5rem 0.1rem;
+    text-align: center;
+    font-size: small;
+    color: #999;
+}
+.hrk-bar-toggle:checked ~ .hrk-menu {  /* the responsive menu is labeled with class hrk-menu */
+    display: flex;
+    background: inherit;
+    z-index: 10;
+    border: thin solid;
+}
+.hrk-bar-toggle + label:before { /* make sure the navbar toggle and label are a block */
+    display: block !important;
+}
+.hrk-bar-perm, .hrk-bar-toggle + label { /* nonresponsive parts of the menu are just flex */
+    flex: 1 0;
+}
+.hrk-bar-last { /* move a navbar item to the end of the lst */
+    order: 100;
+}
+.hrk-bar-toggle + label { /* give the navbar hamburger some size and margins and make the cursor point into */
+    display: inline;
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: .5rem 1rem;
+    width: unset;
+}
+.hrk-bar > .hrk-toggle-label {
+    margin-left: -2rem;
+}
+.hrk-navbar > .hrk-menu {
     position: absolute;
     top: 3rem;
 }
-.hrk-navbar-container { /* the whole navbar w. responsive and non-responsive parts */
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    position: relative;
-    background: rgba(250,250,250,.98)
-}
-.hrk-menu-grid > .hrk-tree-node,
-.hrk-menu-grid > .hrk-tree-leaf {
+.hrk-menu > .hrk-tree,
+.hrk-menu > .hrk-leaf {
     margin-right: 1rem;
 }
 .hrk-bar-perm > .uk-dropdown ul {
@@ -84,14 +102,14 @@
 .hrk-menu-active {
     border-radius: 0 .5rem .5rem .5rem;
 }
-.hrk-bar-last > a,
+.hrk-bar-extramenu > a,
 .hrk-bar-item a,
 .hrk-bar-perm > a { /* all navbar top bar links get look and feel */
     padding: 1rem;
     width: auto;
 }
-.hrk-menu-grid > .hrk-tree-node > .hrk-tree-container > a,
-.hrk-menu-grid .hrk-tree-leaf > * {
+.hrk-menu > .hrk-tree > .hrk-tree-node > a,
+.hrk-menu .hrk-leaf > * {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-decoration: none;
     display: inline-block;
@@ -100,52 +118,46 @@
 }
 .hrk-bar-perm > a:hover, /* top-level items get hover highlighting */
 .hrk-bar-item a:hover,
-.hrk-menu-grid > .hrk-tree-leaf:hover,
-.hrk-bar-toggle-label:hover,
-.hrk-menu-grid > .hrk-tree-node > .hrk-tree-container > a:hover {
+.hrk-menu > .hrk-leaf:hover,
+.hrk-bar-toggle + label:hover,
+.hrk-menu > .hrk-tree > .hrk-tree-node > a:hover {
     background: rgba(50, 50, 50, .4);
     border-radius: 0 .5rem .5rem .5rem;
 }
-.hrk-tree-container .hrk-tree-children a, .hrk-menu-text { /* all navbar lower bar links get look and feel */
+.hrk-tree-node .hrk-tree-children a, .hrk-menu-text { /* all navbar lower bar links get look and feel */
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-decoration: none;
     display: inline-block;
     width: 14rem;
     padding: .5rem;
 }
-.hrk-tree-container .hrk-tree-children a:hover, .hrk-menu-text:hover {
+.hrk-tree-node .hrk-tree-children a:hover, .hrk-menu-text:hover {
     background: rgba(100,100,100,.1);
     border-radius: 0 .5rem .5rem .5rem;
 }
+.hrk-tree-node > .hrk-tree-children {
+    margin-left: -1rem;
+    padding-left: .5rem;
+}
 
 /* toggle */
-.hrk-tree-node {
+.hrk-tree {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
     z-index: 10;
 }
-.hrk-toggle-label {
-    display: inline;
-    cursor: pointer;
-    width: 0.8rem;
-    align-self: flex-start;
-    padding: .5rem 0.1rem;
-    text-align: center;
-    font-size: small;
-    color: #999;
-}
-.hrk-tree-container, .hrk-tree-leaf {
+.hrk-tree-node, .hrk-leaf {
     display: inline-block;
     vertical-align: middle;
     -webkit-backface-visibility: hidden;
     align-self: flex-start;
 }
-.hrk-tree-children > .hrk-tree-leaf {
+.hrk-tree-children > .hrk-leaf {
     margin-left: 1rem;
     width: 15rem;
 }
-.hrk-menu-grid > .hrk-tree-leaf {
+.hrk-menu > .hrk-leaf {
     margin-left: 1rem;
     margin-right: .5rem;
 }
@@ -157,19 +169,34 @@
     background: rgba(245,245,245,.98);
     border: .1rem solid #eee;
 }
-.hrk-menu-grid > .hrk-tree-node > .hrk-tree-container > .hrk-tree-children,
+.hrk-menu > .hrk-tree > .hrk-tree-node > .hrk-tree-children,
 .hrk-bar-perm > .uk-dropdown {
     border-radius: 0 .5rem .5rem .5rem;
 }
-.hrk-toggle:checked ~ .hrk-tree-container > .hrk-tree-children {
+.hrk-toggle:checked ~ .hrk-tree-node > .hrk-tree-children {
     display: flex;
     flex-direction: column;
 }
+.hrk-toggle-close-menu {
+    position: absolute;
+    right: -1rem;
+    z-index: 10;
+}
+.hrk-toggle-close-menu > label {
+    width: 1rem;
+}
+
+.hrk-toggle-close-menu > .hrk-toggle + .hrk-toggle-fmt-x:before {
+    content: 'x';
+}
+.hrk-toggle-close-menu > .hrk-toggle:checked + .hrk-toggle-fmt-x {
+    display: inline-block;
+}
 /* default opener / closer is just text +/- */
-.hrk-toggle + label:before {
+.hrk-toggle + label.hrk-toggle-fmt-caret:before {
     content: '►';
 }
-.hrk-toggle:checked + label:before {
+.hrk-toggle:checked + label.hrk-toggle-fmt-caret:before {
     content: '▼';
 }
 /* default opener / closer is just text +/- */
@@ -179,53 +206,16 @@
 .hrk-toggle:checked + label.hrk-toggle-fmt-plusminus:before {
     content: '-';
 }
-/* hamburger */
-.hrk-toggle + label.hrk-toggle-fmt-divburger:before {
-    content: '';
-}
-.hrk-toggle:checked + label.hrk-toggle-fmt-divburger:before {
-    content: '';
-}
-
-.hrk-toggle + label.hrk-toggle-fmt-divburger > div.hrk-burger-menu {
-    font-size: x-small;
-    font-weight: 900;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    margin-left: .4rem;
-    color: black;
-}
-.hrk-toggle-fmt-divburger > div.hrk-burger-bar {
-    width: 1.7rem;
-    height: 0.25rem;
-    background-color: black;
-    border-radius: .25rem;
-    /*position: absolute;*/
-}
-.hrk-toggle-fmt-divburger > div.hrk-burger-bar:nth-child(1) {
-    margin: 0.4rem 0.4rem 0.1rem 0.4rem;
-}
-.hrk-toggle-fmt-divburger > div.hrk-burger-bar:nth-child(3) {
-    margin: 0.1rem 0.4rem 0.4rem 0.4rem;
-}
-
-
-.hrk-toggle:checked + label.hrk-toggle-fmt-divburger > div:nth-child(1) {
-    transform: translateY(.12rem) rotate(45deg);
-    transition: rotate .5s ease-in-out;
-}
-.hrk-toggle:checked + label.hrk-toggle-fmt-divburger > div.hrk-burger-menu {
+/* toggle option: text-based carets */
+.hrk-toggle:checked + label.hrk-toggle-fmt-onoff > .hrk-toggle-fmt-onoff-on {
     display: none;
 }
-.hrk-toggle:checked + label.hrk-toggle-fmt-divburger > div:nth-child(3) {
-    transform: translateY(-.25rem) rotate(-45deg);
+.hrk-toggle + label.hrk-toggle-fmt-onoff > .hrk-toggle-fmt-onoff-off {
+    display: none;
 }
-
 /* toggle option: text-based carets */
-.hrk-toggle + label.hrk-toggle-fmt-x:before {
-    content: "x";
-}
-.hrk-toggle:checked + label.hrk-toggle-fmt-x:before {
-    content: "x";
+.hrk-toggle:checked + label.hrk-toggle-fmt-onoff > .hrk-toggle-fmt-onoff-off {
+    display: initial;
 }
 
 .hrk-toggle + label.hrk-toggle-fmt-ellipsis:before {
@@ -236,6 +226,9 @@
     font-weight: 900;
     content: "X";
 }
+.hrk-toggle-fmt-paginav {
+    margin-right: 0;
+}
 .hrk-toggle + label.hrk-toggle-fmt-paginav:before {
     font-weight: 900;
     content: "◃|▹";
@@ -244,76 +237,22 @@
     font-weight: 900;
     content: "X"; /* ▵ */
 }
-/* toggle option: Font Awesome caret concept
-.hrk-toggle + label.hrk-toggle-fmt-facaret:before {
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    content: "\f0da";
-}
-.hrk-toggle:checked + label.hrk-toggle-fmt-facaret:before {
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    content: "\f0d7";
-} */
-/* toggle option: Font Awesome plus/minus +/- concept
-.hrk-toggle + label.hrk-toggle-fmt-faplusminus {
-    font-size: .8rem;
-    margin-top: .5rem;
-}
-.hrk-toggle + label.hrk-toggle-fmt-faplusminus:before {
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    content: "\f067";
-}
-.hrk-toggle:checked + label.hrk-toggle-fmt-faplusminus:before {
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    content: "\f068";
-} */
-/* toggle option: Font Awesome burger/X concept
-.hrk-toggle + label.hrk-toggle-fmt-faburgermenu:before {
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    content: "\f0c9";
-}
-.hrk-toggle:checked + label.hrk-toggle-fmt-faburgermenu:before {
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    content: "\f00d";
-} */
-/* toggle option: Font Awesome vertical-ellipsis/X concept
-.hrk-toggle + label.hrk-toggle-fmt-faextramenu:before {
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    content: "\f142";
-}
-.hrk-toggle:checked + label.hrk-toggle-fmt-faextramenu:before {
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    content: "\f00d";
-}
-*/
 
-.hrk-toggle-close-menu {
-    position: absolute;
-    right: -1rem;
-    z-index: 10;
-}
 
 /* media query goes responsive */
 @media screen and (min-width: 80rem) {
     /* 960px */
-    .hrk-bar-last > a,
+    .hrk-bar-extramenu > a,
     .hrk-bar-item a,
-    .hrk-menu-grid > .hrk-tree-node > .hrk-tree-container > a,
-    .hrk-menu-grid .hrk-tree-leaf > * { /* all navbar top bar links get look and feel */
+    .hrk-menu > .hrk-tree > .hrk-tree-node > a,
+    .hrk-menu .hrk-leaf > * { /* all navbar top bar links get look and feel */
         width: auto;
     }
-    .hrk-navbar-container {
+    .hrk-navbar {
         flex-flow: row;
         padding-bottom: 0;
     }
-    .hrk-menu-grid {
+    .hrk-menu {
         display: flex;
         flex-basis: auto;
         order: 4;
@@ -324,19 +263,15 @@
         border-radius: 0;
         width: auto;
     }
-    .hrk-navbar-container > .hrk-menu-grid {
+    .hrk-navbar > .hrk-menu {
         position: static;
     }
-
-    .hrk-inline-responsive-menu > .hrk-menu-grid >  * {
-        padding: .5rem;
-    }
-    .hrk-menu-grid > .hrk-tree-node:hover > .hrk-tree-container > .hrk-tree-children {
+    .hrk-menu > .hrk-tree:hover > .hrk-tree-node > .hrk-tree-children {
         display: flex;
         flex-direction: column;
         position: absolute;
     }
-    .hrk-bar-toggle-label {
+    .hrk-bar-toggle + label {
         display: none !important;
     }
     .hrk-tree-children {
@@ -349,19 +284,20 @@
         flex: 1 100%;
         top: 0;
     }
-    .hrk-tree-node, .hrk-tree-leaf,
-    .hrk-menu-grid > .hrk-tree-node > .hrk-tree-container > .hrk-menu-text { /* top-level inactive item */
+    .hrk-tree-node, .hrk-leaf,
+    .hrk-menu > .hrk-tree > .hrk-tree-node > .hrk-menu-text { /* top-level inactive item */
         width: auto;
     }
-    .hrk-menu-grid > .hrk-tree-leaf {
-        margin-left: .25rem;
-        margin-right: .5rem;
-    }
-
-    .hrk-tree-children .hrk-tree-container /*, .hrk-tree-leaf*/ {
+    .hrk-tree-children .hrk-tree-node /*, .hrk-leaf*/ {
         width: 13rem;
     }
-    .hrk-bar-last {
-        order: 100;
+    .hrk-bar-extramenu {
+        order: 5;
+    }
+    .hrk-menu > *:first-child {
+        margin-left: 0;
+    }
+    .hrk-menu > *:last-child {
+        margin-right: 0;
     }
 }
