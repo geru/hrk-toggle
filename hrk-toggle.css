@@ -153,7 +153,7 @@
 .hrk-navbar > .hrk-menu > .hrk-tree > .hrk-tree-node > a,
 .hrk-navbar > .hrk-menu > .hrk-tree > .hrk-tree-node > span,
 .hrk-navbar > .hrk-menu > .hrk-tree > label,
-.hrk-navbar > .hrk-menu > .hrk-tree > .hrk-tree-leav > * {
+.hrk-navbar > .hrk-menu > .hrk-leaf > * {
     padding-top: 1rem;
 }
 .hrk-tree-node, .hrk-leaf {
