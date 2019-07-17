@@ -215,7 +215,7 @@
 .hrk-toggle:checked + label.hrk-toggle-fmt-plusminus:before {
     content: '-';
 }
-/* toggle option: text-based carets */
+/* toggle option: put svg icons, text or anything else into on/off spans */
 .hrk-toggle:checked + label.hrk-toggle-fmt-onoff > .hrk-toggle-fmt-onoff-on {
     display: none;
 }
