@@ -124,14 +124,14 @@
     background: rgba(50, 50, 50, .4);
     border-radius: 0 .5rem .5rem .5rem;
 }
-.hrk-tree-container .hrk-tree-children a, .hrk-menu-text { /* all navbar lower bar links get look and feel */
+.hrk-tree-node .hrk-tree-children a, .hrk-menu-text { /* all navbar lower bar links get look and feel */
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-decoration: none;
     display: inline-block;
     width: 14rem;
     padding: .5rem;
 }
-.hrk-tree-container .hrk-tree-children a:hover, .hrk-menu-text:hover {
+.hrk-tree-node .hrk-tree-children a:hover, .hrk-menu-text:hover {
     background: rgba(100,100,100,.1);
     border-radius: 0 .5rem .5rem .5rem;
 }
@@ -173,7 +173,7 @@
 .hrk-bar-perm > .uk-dropdown {
     border-radius: 0 .5rem .5rem .5rem;
 }
-.hrk-toggle:checked ~ .hrk-tree-container > .hrk-tree-children {
+.hrk-toggle:checked ~ .hrk-tree-node > .hrk-tree-children {
     display: flex;
     flex-direction: column;
 }
@@ -206,7 +206,7 @@
 .hrk-toggle:checked + label.hrk-toggle-fmt-plusminus:before {
     content: '-';
 }
-/* toggle option: text-based carets */
+/* toggle option: put svg icons, text or anything else into on/off spans */
 .hrk-toggle:checked + label.hrk-toggle-fmt-onoff > .hrk-toggle-fmt-onoff-on {
     display: none;
 }
@@ -291,8 +291,8 @@
     .hrk-tree-children .hrk-tree-node /*, .hrk-leaf*/ {
         width: 13rem;
     }
-    .hrk-bar-last {
-        order: 100;
+    .hrk-bar-extramenu {
+        order: 5;
     }
     .hrk-menu > *:first-child {
         margin-left: 0;
