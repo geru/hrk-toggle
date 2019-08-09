@@ -44,8 +44,7 @@
     flex: 1 100%;
     flex-direction: column;
     background: inherit;
-    /* width: 20rem; */
-    z-index: 1000;
+    z-index: 900;
     padding-bottom: .5rem;
     border-radius: 0 .5rem .5rem .5rem;
 }
