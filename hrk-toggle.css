@@ -27,6 +27,10 @@
 .hrk-bar {
     display: flex;
     flex-flow: row wrap;
+    z-index: 2000;
+}
+.hrk-bar::after {
+    clear: none;
 }
 .hrk-navbar { /* the whole navbar w. responsive and non-responsive parts */
     display: flex;
