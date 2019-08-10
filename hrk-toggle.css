@@ -105,16 +105,16 @@
 .hrk-menu-active {
     border-radius: 0 .5rem .5rem .5rem;
 }
-.hrk-bar-extramenu > a,
-.hrk-bar-item a,
-.hrk-bar-perm > a { /* all navbar top bar links get look and feel */
+.hrk-bar-extramenu > a, .hrk-bar-extramenu > span.hrk-a,
+.hrk-bar-item a, .hrk-bar-item span.hrk-a,
+.hrk-bar-perm > a, .hrk-bar-perm > span.hrk-a { /* all navbar top bar links get look and feel */
     padding: 1rem;
     width: auto;
 }
 .hrk-navbar > .hrk-bar-item, .hrk-navbar > .hrk-bar-perm {
     height: 3rem;
 }
-.hrk-menu > .hrk-tree > .hrk-tree-node > a,
+.hrk-menu > .hrk-tree > .hrk-tree-node > a, .hrk-menu > .hrk-tree > .hrk-tree-node > span.hrk-a,
 .hrk-menu .hrk-leaf > * {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-decoration: none;
@@ -130,14 +130,15 @@
     background: rgba(50, 50, 50, .4);
     border-radius: 0 .5rem .5rem .5rem;
 }
-.hrk-tree-node .hrk-tree-children a, .hrk-menu-text { /* all navbar lower bar links get look and feel */
+.hrk-tree-node .hrk-tree-children a,
+.hrk-tree-node .hrk-tree-children span.hrk-a { /* all navbar lower bar links get look and feel */
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-decoration: none;
     display: inline-block;
     width: 14rem;
     padding: .5rem;
 }
-.hrk-tree-node .hrk-tree-children a:hover, .hrk-menu-text:hover {
+.hrk-tree-node .hrk-tree-children a:hover, span.hrk-a:hover {
     background: rgba(100,100,100,.1);
     border-radius: 0 .5rem .5rem .5rem;
 }
@@ -255,8 +256,11 @@
 @media screen and (min-width: 80rem) {
     /* 960px */
     .hrk-bar-extramenu > a,
+    .hrk-bar-extramenu > span.hrk-a,
     .hrk-bar-item a,
+    .hrk-bar-item span.hrk-a,
     .hrk-menu > .hrk-tree > .hrk-tree-node > a,
+    .hrk-menu > .hrk-tree > .hrk-tree-node > span.hrk-a,
     .hrk-menu .hrk-leaf > * { /* all navbar top bar links get look and feel */
         width: auto;
     }
@@ -297,7 +301,7 @@
         top: 0;
     }
     .hrk-tree-node, .hrk-leaf,
-    .hrk-menu > .hrk-tree > .hrk-tree-node > .hrk-menu-text { /* top-level inactive item */
+    .hrk-menu > .hrk-tree > .hrk-tree-node > span.hrk-a { /* top-level inactive item */
         width: auto;
     }
     .hrk-tree-children .hrk-tree-node /*, .hrk-leaf*/ {
