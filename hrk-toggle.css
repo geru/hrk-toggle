@@ -16,6 +16,9 @@
     display: flex;
     flex-direction: row;
 }
+.hrk-flex-main-item {
+    flex: 1 100%;
+}
 .hrk-margin-none {
     margin: 0;
 }
@@ -60,7 +63,7 @@
     padding: .5rem 0.1rem;
     text-align: center;
     font-size: small;
-    color: #999;
+    color: black;
 }
 .hrk-bar-toggle:checked ~ .hrk-menu {  /* the responsive menu is labeled with class hrk-menu */
     display: flex;
@@ -95,13 +98,6 @@
 .hrk-menu > .hrk-leaf {
     margin-right: 1rem;
 }
-.hrk-bar-perm > .uk-dropdown ul {
-    list-style: none;
-}
-.hrk-bar-perm > .uk-dropdown {
-    margin-right: 1rem;
-    margin-top: -.5rem;
-}
 .hrk-menu-active {
     border-radius: 0 .5rem .5rem .5rem;
 }
@@ -115,14 +111,18 @@
     height: 3rem;
 }
 .hrk-menu > .hrk-tree > .hrk-tree-node > a, .hrk-menu > .hrk-tree > .hrk-tree-node > span.hrk-a,
-.hrk-menu .hrk-leaf > * {
+.hrk-menu .hrk-leaf > *,
+.hrk-bar-perm a, .hrk-bar-perm span.hrk-a {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-decoration: none;
     display: inline-block;
     padding: 0.5rem;
+}
+.hrk-menu > .hrk-tree > .hrk-tree-node > a, .hrk-menu > .hrk-tree > .hrk-tree-node > span.hrk-a,
+.hrk-menu .hrk-leaf > * {
     width: 15rem;
 }
-.hrk-bar-perm > a:hover, /* top-level items get hover highlighting */
+.hrk-bar-perm a:hover, /* top-level items get hover highlighting */
 .hrk-bar-item a:hover,
 .hrk-menu > .hrk-leaf:hover,
 .hrk-bar-toggle + label:hover,
@@ -157,7 +157,8 @@
 .hrk-navbar > .hrk-menu > .hrk-tree > .hrk-tree-node > a,
 .hrk-navbar > .hrk-menu > .hrk-tree > .hrk-tree-node > span,
 .hrk-navbar > .hrk-menu > .hrk-tree > label,
-.hrk-navbar > .hrk-menu > .hrk-leaf > * {
+.hrk-navbar > .hrk-menu > .hrk-leaf > *,
+.hrk-bar-perm a, .hrk-bar-perm span.a {
     padding-top: 1rem;
 }
 .hrk-tree-node, .hrk-leaf {
