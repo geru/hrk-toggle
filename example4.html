@@ -165,43 +165,65 @@
             <div class="hrk-toggle-fmt-onoff-on"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 12l-4-4h8l-4 4z"/></svg></div>
             <div class="hrk-toggle-fmt-onoff-off"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"/><path d="M0 0h24v24H0z" fill="none"/></svg></div>
         </label>
-        <div class="hrk-menu">
-                <div class="hrk-tree">
+        <div class="hrk-menu" style="flex-direction: column">
+            <div>A hierarchical navigation tree that goes responsive for small screens.</div>
+            <div class="hrk-tree">
                     <input class="hrk-toggle" type="checkbox" id="lsb">
                     <label class="hrk-toggle-fmt-plusminus" for="lsb"></label>
                     <div class="hrk-tree-node">
-                        <a href="#">Nav-4-3</a>
+                        <a href="#">Tree</a>
                         <div class="hrk-tree-children">
                             <div class="hrk-leaf">
-                                <a href="#">Nav-4-3-1</a>
+                                <a href="#">Item-1</a>
                             </div>
-                            <div class="hrk-leaf">
-                                <a href="#">Nav-4-3-2</a>
+                            <div class="hrk-tree">
+                                <input class="hrk-toggle" type="checkbox" id="lsb-2">
+                                <label class="hrk-toggle-fmt-plusminus" for="lsb-2"></label>
+                                <div class="hrk-tree-node">
+                                    <a href="#">Item-2</a>
+                                    <div class="hrk-tree-children">
+                                        <div class="hrk-tree">
+                                            <input class="hrk-toggle" type="checkbox" id="lsb-2-1">
+                                            <label class="hrk-toggle-fmt-plusminus" for="lsb-2-1"></label>
+                                            <div class="hrk-tree-node">
+                                                <a href="#">Item-2-1</a>
+                                                <div class="hrk-tree-children">
+                                                    <div class="hrk-leaf"><a href="#">Item-2-1</a></div>
+                                                    <div class="hrk-leaf"><a href="#">Item-2-2</a></div>
+                                                    <div class="hrk-leaf"><a href="#">Item-2-3</a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="hrk-leaf"><a href="#">Item-2-2</a></div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="hrk-tree">
                                 <input class="hrk-toggle" type="checkbox" id="lsb-3">
                                 <label class="hrk-toggle-fmt-plusminus" for="lsb-3"></label>
                                 <div class="hrk-tree-node">
-                                    <a href="#">Nav-4-3-3</a>
+                                    <a href="#">Item-3</a>
                                     <div class="hrk-tree-children">
-                                        <div class="hrk-leaf"><a href="#">Nav-4-3-3-1</a></div>
-                                        <div class="hrk-leaf"><a href="#">Nav-4-3-3-2</a></div>
-                                        <div class="hrk-leaf"><a href="#">Nav-4-3-3-3</a></div>
-                                        <div class="hrk-leaf"><a href="#">Nav-4-3-3-4</a></div>
+                                        <div class="hrk-leaf"><a href="#">Item-3-1</a></div>
+                                        <div class="hrk-leaf"><a href="#">Item-3-2</a></div>
+                                        <div class="hrk-leaf"><a href="#">Item-3-3</a></div>
+                                        <div class="hrk-leaf"><a href="#">Item-3-4</a></div>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="hrk-leaf">
+                                <a href="#">Item-4</a>
                             </div>
                         </div>
                     </div>
             </div>
-
-
 
         </div>
 
 
     </div>
     <div class="hrk-flex-main-item">
+        <img class="hrk-float-left hrk-margin-medium" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Exploding_E_match_collage.jpg/240px-Exploding_E_match_collage.jpg">
         <h1>Nulla Facili</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed urna mi, bibendum at eleifend sit amet, mattis eu magna. Aliquam mattis laoreet dictum. Nunc lobortis tortor quis metus gravida, at suscipit odio mollis. Etiam pretium pretium vestibulum. Proin non felis in arcu pellentesque pulvinar eget ut ipsum. Etiam semper, purus sed ornare aliquam, dui justo tincidunt tellus, et dignissim eros mi eu metus. Morbi pretium, ante in tempor lobortis, purus arcu tempus enim, ut fringilla metus nibh sit amet nisi. Aenean at vestibulum sapien. Quisque luctus, nisl efficitur consequat dapibus, elit urna accumsan tellus, sed aliquam lectus ex vitae est. Aliquam nisl lorem, bibendum et dui non, porttitor accumsan ante. Proin sit amet mi dapibus, interdum magna vitae, viverra urna. Proin velit augue, bibendum vitae fringilla ut, iaculis id metus.</p>
         <p>Nunc elit libero, convallis feugiat iaculis rutrum, gravida quis nisl. Fusce eu neque nibh. Integer enim est, pulvinar at dapibus sed, pharetra sed sem. Etiam vehicula neque sit amet justo vulputate eleifend. Proin vitae sem in nisl volutpat feugiat. Fusce eget egestas diam. Etiam sodales condimentum lacus, eget porttitor nisl volutpat ac. Donec convallis pretium quam at congue. Donec eros quam, ullamcorper quis sodales vitae, semper dictum nisi. Nulla facilisi. Duis mauris turpis, dignissim eget euismod quis, convallis eget mauris.</p>
@@ -213,6 +235,18 @@
         <div class="hrk-menu">
             Right sidebar information is responsive, and toggled on and off with the ellipsis toggle format
         </div>
+    </div>
+</div>
+<hr>
+<div class="hrk-bar hrk-margin-medium">
+    <input class="hrk-toggle hrk-bar-toggle" type="checkbox" id="footer">
+    <label class="hrk-toggle-fmt-onoff" for="footer">
+        <div class="hrk-toggle-fmt-onoff-on">&copy;</div>
+        <div class="hrk-toggle-fmt-onoff-off"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 19.1H3V5h18v14.1zM21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/><path fill="none" d="M21 19.1H3V5h18v14.1zM21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/><path d="M14.59 8L12 10.59 9.41 8 8 9.41 10.59 12 8 14.59 9.41 16 12 13.41 14.59 16 16 14.59 13.41 12 16 9.41z"/><path fill="none" d="M0 0h24v24H0z"/></svg></div>
+    </label>
+    <div class="hrk-menu" style="width: 100%; justify-content: space-evenly; align-items: flex-start; flex-direction: row">
+            <div>Footer with various things that might be afterthoughts.</div>
+            <div class="hrk-bar-last">&copy; Copyright message and disclaimers.</div>
     </div>
 </div>
 </body>

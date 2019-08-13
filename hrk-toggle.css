@@ -93,6 +93,7 @@
 .hrk-navbar > .hrk-menu {
     position: absolute;
     top: 3rem;
+    z-index: 3000 !important;
 }
 .hrk-menu > .hrk-tree,
 .hrk-menu > .hrk-leaf {
@@ -104,7 +105,7 @@
 .hrk-bar-extramenu > a, .hrk-bar-extramenu > span.hrk-a,
 .hrk-bar-item a, .hrk-bar-item span.hrk-a,
 .hrk-bar-perm > a, .hrk-bar-perm > span.hrk-a { /* all navbar top bar links get look and feel */
-    padding: 1rem;
+/*    padding: 1rem; */
     width: auto;
 }
 .hrk-navbar > .hrk-bar-item, .hrk-navbar > .hrk-bar-perm {
@@ -116,11 +117,11 @@
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-decoration: none;
     display: inline-block;
-    padding: 0.5rem;
 }
 .hrk-menu > .hrk-tree > .hrk-tree-node > a, .hrk-menu > .hrk-tree > .hrk-tree-node > span.hrk-a,
 .hrk-menu .hrk-leaf > * {
-    width: 15rem;
+    padding: 0.5rem;
+    /*width: 15rem;*/
 }
 .hrk-bar-perm a:hover, /* top-level items get hover highlighting */
 .hrk-bar-item a:hover,
@@ -135,7 +136,7 @@
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-decoration: none;
     display: inline-block;
-    width: 14rem;
+    /*width: 14rem;*/
     padding: .5rem;
 }
 .hrk-tree-node .hrk-tree-children a:hover, span.hrk-a:hover {
@@ -150,7 +151,7 @@
 /* toggle */
 .hrk-tree {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row;
     align-items: stretch;
     z-index: 10;
 }
@@ -158,7 +159,7 @@
 .hrk-navbar > .hrk-menu > .hrk-tree > .hrk-tree-node > span,
 .hrk-navbar > .hrk-menu > .hrk-tree > label,
 .hrk-navbar > .hrk-menu > .hrk-leaf > *,
-.hrk-bar-perm a, .hrk-bar-perm span.a {
+.hrk-bar-perm > a, .hrk-bar-perm > span.a {
     padding-top: 1rem;
 }
 .hrk-tree-node, .hrk-leaf {
@@ -169,7 +170,7 @@
 }
 .hrk-tree-children > .hrk-leaf {
     margin-left: 1rem;
-    width: 15rem;
+    /*width: 15rem;*/
 }
 .hrk-menu > .hrk-leaf {
     margin-left: 1rem;
@@ -293,7 +294,7 @@
     }
     .hrk-tree-children {
         position: absolute;
-        width: 16rem;
+        /*width: 16rem;*/
         border-radius: 0 .5rem .5rem .5rem;
     }
     .hrk-tree-children .hrk-tree-children {
@@ -306,7 +307,7 @@
         width: auto;
     }
     .hrk-tree-children .hrk-tree-node /*, .hrk-leaf*/ {
-        width: 13rem;
+        /*width: 13rem;*/
     }
     .hrk-bar-extramenu {
         order: 5;
