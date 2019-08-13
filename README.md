@@ -47,7 +47,7 @@ To use this library, you will set certain HTML elements with particular classes 
   
 #### Toggle formatting classes
 
-  - hrk-toggle-fmt-x: a general-purpose toggle that allows any icon as its trigger and puts an X to close ?? check this
+  - hrk-toggle-fmt-x: a general-purpose toggle that allows any icon as its trigger and puts an X to close
   - hrk-toggle-fmt-caret: show opener closer caret symbols
   - hrk-toggle-fmt-plusminus: toggle with + and - symbols
   - hrk-toggle-fmt-ellipsis: toggle with ... and X

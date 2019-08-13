@@ -83,8 +83,8 @@
 .hrk-bar-toggle + label { /* give the navbar hamburger some size and margins and make the cursor point into */
     display: inline;
     cursor: pointer;
-    font-size: 1.5rem;
-    padding: .5rem 1rem;
+    /*font-size: 1.5rem;*/
+    padding: .75rem 1rem;
     width: unset;
 }
 .hrk-bar > .hrk-toggle-label {
@@ -105,7 +105,8 @@
 .hrk-bar-extramenu > a, .hrk-bar-extramenu > span.hrk-a,
 .hrk-bar-item a, .hrk-bar-item span.hrk-a,
 .hrk-bar-perm > a, .hrk-bar-perm > span.hrk-a { /* all navbar top bar links get look and feel */
-/*    padding: 1rem; */
+    margin-top: -.3rem;
+    padding: 1rem;
     width: auto;
 }
 .hrk-navbar > .hrk-bar-item, .hrk-navbar > .hrk-bar-perm {
@@ -118,9 +119,9 @@
     text-decoration: none;
     display: inline-block;
 }
-.hrk-menu > .hrk-tree > .hrk-tree-node > a, .hrk-menu > .hrk-tree > .hrk-tree-node > span.hrk-a,
+.hrk-navbar > .hrk-menu > .hrk-tree > .hrk-tree-node > a, .hrk-navbar > .hrk-menu > .hrk-tree > .hrk-tree-node > span.hrk-a,
 .hrk-menu .hrk-leaf > * {
-    padding: 0.5rem;
+    padding: 1rem 0.5rem;
     /*width: 15rem;*/
 }
 .hrk-bar-perm a:hover, /* top-level items get hover highlighting */
@@ -132,7 +133,8 @@
     border-radius: 0 .5rem .5rem .5rem;
 }
 .hrk-tree-node .hrk-tree-children a,
-.hrk-tree-node .hrk-tree-children span.hrk-a { /* all navbar lower bar links get look and feel */
+.hrk-tree-node .hrk-tree-children span.hrk-a,
+.hrk-menu > .hrk-tree > .hrk-tree-node > a, .hrk-menu > .hrk-tree > .hrk-tree-node > span.hrk-a { /* all navbar lower bar links get look and feel */
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-decoration: none;
     display: inline-block;
@@ -158,8 +160,7 @@
 .hrk-navbar > .hrk-menu > .hrk-tree > .hrk-tree-node > a,
 .hrk-navbar > .hrk-menu > .hrk-tree > .hrk-tree-node > span,
 .hrk-navbar > .hrk-menu > .hrk-tree > label,
-.hrk-navbar > .hrk-menu > .hrk-leaf > *,
-.hrk-bar-perm > a, .hrk-bar-perm > span.a {
+.hrk-navbar > .hrk-menu > .hrk-leaf > * {
     padding-top: 1rem;
 }
 .hrk-tree-node, .hrk-leaf {
@@ -219,7 +220,7 @@
     content: '+';
 }
 .hrk-toggle:checked + label.hrk-toggle-fmt-plusminus:before {
-    content: '-';
+    content: '–'; /*'—';*/
 }
 /* toggle option: put svg icons, text or anything else into on/off spans */
 .hrk-toggle:checked + label.hrk-toggle-fmt-onoff > .hrk-toggle-fmt-onoff-on {
