@@ -126,8 +126,9 @@
     text-decoration: none;
     display: inline-block;
 }
+.hrk-menu .hrk-tree > .hrk-tree-node > *,
 .hrk-menu .hrk-leaf > * {
-    padding: 1rem 0.5rem;
+    padding: 0.5rem;
 }
 .hrk-bar-item a:hover,
 .hrk-bar-item span.hrk-a:hover,
