@@ -30,7 +30,7 @@
 .hrk-bar {
     display: flex;
     flex-flow: row wrap;
-    z-index: 2000;
+    z-index: 900;
 }
 .hrk-bar::after {
     clear: none;
@@ -45,14 +45,20 @@
 .hrk-toggle { /* the input checkbox or radio that a submenu is attached to. navbar toggle also gets hrk-bar-toggle class */
     display: none;
 }
-.hrk-menu { /* responsive menu disappears as standard and goes vertical for mobile first */
+.hrk-menu-responsive { /* responsive menu disappears as standard and goes vertical for mobile first */
     display: none;
     order: 5;
     flex: 1 100%;
     flex-direction: column;
     background: inherit;
-    z-index: 900;
-    padding-bottom: .5rem;
+    z-index: 800;
+}
+.hrk-menu-perm {
+    display: flex;
+    flex-direction: row;
+}
+.hrk-menu {
+    /* padding-bottom: .5rem; */
     border-radius: 0 .5rem .5rem .5rem;
 }
 .hrk-toggle + label {
@@ -65,7 +71,7 @@
     font-size: small;
     color: black;
 }
-.hrk-bar-toggle:checked ~ .hrk-menu {  /* the responsive menu is labeled with class hrk-menu */
+.hrk-bar-toggle:checked ~ .hrk-menu-responsive {  /* the responsive menu is labeled with class hrk-menu */
     display: flex;
     background: inherit;
     z-index: 10;
@@ -90,10 +96,12 @@
 .hrk-bar > .hrk-toggle-label {
     margin-left: -2rem;
 }
-.hrk-navbar > .hrk-menu {
+.hrk-navbar > .hrk-menu-responsive {
     position: absolute;
+    z-index: 990 !important;
+}
+.hrk-navbar > .hrk-menu {
     top: 3rem;
-    z-index: 3000 !important;
 }
 .hrk-menu > .hrk-tree,
 .hrk-menu > .hrk-leaf {
@@ -102,46 +110,49 @@
 .hrk-menu-active {
     border-radius: 0 .5rem .5rem .5rem;
 }
-.hrk-bar-extramenu > a, .hrk-bar-extramenu > span.hrk-a,
-.hrk-bar-item a, .hrk-bar-item span.hrk-a,
-.hrk-bar-perm > a, .hrk-bar-perm > span.hrk-a { /* all navbar top bar links get look and feel */
+.hrk-bar-extramenu li {
+    list-style-type: none;
+}
+/*.hrk-bar-extramenu > a, .hrk-bar-extramenu > span.hrk-a,*/
+.hrk-navbar > .hrk-bar-item > a, .hrk-navbar > .hrk-bar-item > span.hrk-a { /* all navbar top bar links get look and feel */
     margin-top: -.3rem;
     padding: 1rem;
     width: auto;
 }
-.hrk-navbar > .hrk-bar-item, .hrk-navbar > .hrk-bar-perm {
-    height: 3rem;
-}
 .hrk-menu > .hrk-tree > .hrk-tree-node > a, .hrk-menu > .hrk-tree > .hrk-tree-node > span.hrk-a,
 .hrk-menu .hrk-leaf > *,
-.hrk-bar-perm a, .hrk-bar-perm span.hrk-a {
+.hrk-bar-item a, .hrk-bar-item span.hrk-a {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-decoration: none;
     display: inline-block;
 }
-.hrk-navbar > .hrk-menu > .hrk-tree > .hrk-tree-node > a, .hrk-navbar > .hrk-menu > .hrk-tree > .hrk-tree-node > span.hrk-a,
 .hrk-menu .hrk-leaf > * {
     padding: 1rem 0.5rem;
-    /*width: 15rem;*/
 }
-.hrk-bar-perm a:hover, /* top-level items get hover highlighting */
 .hrk-bar-item a:hover,
+.hrk-bar-item span.hrk-a:hover,
 .hrk-menu > .hrk-leaf:hover,
 .hrk-bar-toggle + label:hover,
-.hrk-menu > .hrk-tree > .hrk-tree-node > a:hover {
+.hrk-menu > .hrk-tree > .hrk-tree-node > a:hover,
+.hrk-menu > .hrk-tree > .hrk-tree-node > span.hrk-a:hover{
     background: rgba(50, 50, 50, .4);
     border-radius: 0 .5rem .5rem .5rem;
 }
 .hrk-tree-node .hrk-tree-children a,
 .hrk-tree-node .hrk-tree-children span.hrk-a,
-.hrk-menu > .hrk-tree > .hrk-tree-node > a, .hrk-menu > .hrk-tree > .hrk-tree-node > span.hrk-a { /* all navbar lower bar links get look and feel */
+.hrk-navbar > .hrk-bar-item .hrk-bar-extramenu a,
+.hrk-navbar > .hrk-bar-item .hrk-bar-extramenu span.hrk-a,
+.hrk-menu > .hrk-tree > .hrk-tree-node > a,
+.hrk-menu > .hrk-tree > .hrk-tree-node > span.hrk-a { /* all navbar lower bar links get look and feel */
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-decoration: none;
     display: inline-block;
-    /*width: 14rem;*/
     padding: .5rem;
 }
-.hrk-tree-node .hrk-tree-children a:hover, span.hrk-a:hover {
+.hrk-navbar > .hrk-bar-item .hrk-bar-extramenu a,
+.hrk-navbar > .hrk-bar-item .hrk-bar-extramenu span.hrk-a,
+.hrk-tree-node .hrk-tree-children a:hover,
+.hrk-tree-node .hrk-tree-children span.hrk-a:hover {
     background: rgba(100,100,100,.1);
     border-radius: 0 .5rem .5rem .5rem;
 }
@@ -158,7 +169,7 @@
     z-index: 10;
 }
 .hrk-navbar > .hrk-menu > .hrk-tree > .hrk-tree-node > a,
-.hrk-navbar > .hrk-menu > .hrk-tree > .hrk-tree-node > span,
+.hrk-navbar > .hrk-menu > .hrk-tree > .hrk-tree-node > span.hrk-a,
 .hrk-navbar > .hrk-menu > .hrk-tree > label,
 .hrk-navbar > .hrk-menu > .hrk-leaf > * {
     padding-top: 1rem;
@@ -169,14 +180,16 @@
     -webkit-backface-visibility: hidden;
     align-self: flex-start;
 }
+.hrk-bar-extramenu ul,
 .hrk-tree-children > .hrk-leaf {
     margin-left: 1rem;
-    /*width: 15rem;*/
+    min-width: 10rem;
 }
 .hrk-menu > .hrk-leaf {
     margin-left: 1rem;
     margin-right: .5rem;
 }
+.hrk-bar-extramenu,
 .hrk-tree-children {
     display: none;
     order: 5;
@@ -186,9 +199,15 @@
     border: .1rem solid #eee;
 }
 .hrk-menu > .hrk-tree > .hrk-tree-node > .hrk-tree-children,
-.hrk-bar-perm > .uk-dropdown {
+.hrk-bar-item .hrk-bar-extramenu {
     border-radius: 0 .5rem .5rem .5rem;
 }
+.hrk-bar-last > .hrk-tree > .hrk-tree-node > .hrk-tree-children {
+    position: fixed;
+    right: 1rem;
+}
+
+.hrk-bar-extramenu,
 .hrk-toggle:checked ~ .hrk-tree-node > .hrk-tree-children {
     display: flex;
     flex-direction: column;
@@ -255,13 +274,13 @@
 }
 
 
-/* media query goes responsive */
+/* media query non-responsive for big screen */
 @media screen and (min-width: 80rem) {
-    /* 960px */
+
     .hrk-bar-extramenu > a,
     .hrk-bar-extramenu > span.hrk-a,
-    .hrk-bar-item a,
-    .hrk-bar-item span.hrk-a,
+    .hrk-bar-item > a,
+    .hrk-bar-item > span.hrk-a,
     .hrk-menu > .hrk-tree > .hrk-tree-node > a,
     .hrk-menu > .hrk-tree > .hrk-tree-node > span.hrk-a,
     .hrk-menu .hrk-leaf > * { /* all navbar top bar links get look and feel */
@@ -271,24 +290,26 @@
         flex-flow: row;
         padding-bottom: 0;
     }
+    .hrk-menu-responsive {
+        position: static;
+    }
     .hrk-menu {
         display: flex;
         flex-basis: auto;
-        order: 4;
         flex-direction: row;
-        position: static;
         border: none !important;
         padding-bottom: 0;
         border-radius: 0;
         width: auto;
     }
-    .hrk-navbar > .hrk-menu {
+    .hrk-navbar > .hrk-menu-responsive {
         position: static;
     }
+    .hrk-bar-extramenu,
     .hrk-menu > .hrk-tree:hover > .hrk-tree-node > .hrk-tree-children {
         display: flex;
         flex-direction: column;
-        position: absolute;
+        /*position: absolute;*/
     }
     .hrk-bar-toggle + label {
         display: none !important;
@@ -307,9 +328,13 @@
     .hrk-menu > .hrk-tree > .hrk-tree-node > span.hrk-a { /* top-level inactive item */
         width: auto;
     }
-    .hrk-tree-children .hrk-tree-node /*, .hrk-leaf*/ {
-        /*width: 13rem;*/
+    .hrk-bar-last {
+        justify-content: flex-end;
     }
+    .hrk-bar-last > .hrk-tree > .hrk-tree-node > .hrk-tree-children {
+        position: absolute;
+    }
+
     .hrk-bar-extramenu {
         order: 5;
     }
