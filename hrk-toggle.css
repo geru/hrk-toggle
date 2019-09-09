@@ -16,6 +16,10 @@
     display: flex;
     flex-direction: row;
 }
+.hrk-flex-column { /* define horizontal flex */
+    display: flex;
+    flex-direction: column;
+}
 .hrk-flex-main-item {
     flex: 1 100%;
 }
@@ -82,6 +86,9 @@
 }
 .hrk-bar-perm, .hrk-bar-toggle + label { /* nonresponsive parts of the menu are just flex */
     flex: 1 0;
+}
+.hrk-bar-first {
+    order: -1;
 }
 .hrk-bar-last { /* move a navbar item to the end of the lst */
     order: 100;
@@ -276,7 +283,7 @@
 
 
 /* media query non-responsive for big screen */
-@media screen and (min-width: 80rem) {
+@media screen and (min-width: 75rem) {
 
     .hrk-bar-extramenu > a,
     .hrk-bar-extramenu > span.hrk-a,
