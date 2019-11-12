@@ -284,6 +284,9 @@
     font-size: 100%;
     color: darkslategray;
 }
+.hrk-navbar svg, .hrk-menu svg {
+    min-width: 1.5rem;
+}
 
 /* media query non-responsive for big screen */
 @media screen and (min-width: 75rem) {
