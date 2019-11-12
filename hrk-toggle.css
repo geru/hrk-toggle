@@ -280,7 +280,10 @@
     font-weight: 900;
     content: "X"; /* ▵ */
 }
-
+.hrk-toggle + label {
+    font-size: 100%;
+    color: darkslategray;
+}
 
 /* media query non-responsive for big screen */
 @media screen and (min-width: 75rem) {
