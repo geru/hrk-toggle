@@ -29,6 +29,13 @@
 .hrk-margin-medium {
     margin: 1rem;
 }
+.hrk-padding-none {
+    padding: 0;
+}
+.hrk-padding-medium {
+    padding: 1rem;
+}
+
 
 /* responsive navbar */
 .hrk-bar {
@@ -143,7 +150,7 @@
 .hrk-bar-toggle + label:hover,
 .hrk-menu > .hrk-tree > .hrk-tree-node > a:hover,
 .hrk-menu > .hrk-tree > .hrk-tree-node > span.hrk-a:hover{
-    background: rgba(50, 50, 50, .4);
+    background: rgba(50, 50, 50, .1);
     border-radius: 0 .5rem .5rem .5rem;
 }
 .hrk-tree-node .hrk-tree-children a,
@@ -203,7 +210,7 @@
     order: 5;
     flex: 1 100%;
     position: relative;
-    background: rgba(245,245,245,.98);
+    background: rgba(245,245,245,.9);
     border: .1rem solid #eee;
 }
 .hrk-menu > .hrk-tree > .hrk-tree-node > .hrk-tree-children,
