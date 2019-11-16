@@ -254,9 +254,11 @@
 }
 /* default opener / closer is just text +/- */
 .hrk-toggle + label.hrk-toggle-fmt-caret:before {
+    font-family: "Times New Roman", serif;
     content: '►';
 }
 .hrk-toggle:checked + label.hrk-toggle-fmt-caret:before {
+    font-family: "Times New Roman", serif;
     content: '▼';
 }
 /* default opener / closer is just text +/- */
@@ -299,7 +301,7 @@
 }
 .hrk-toggle + label {
     font-size: 100%;
-    color: darkslategray;
+    color: rgba(120, 120, 120, .8);
 }
 .hrk-navbar svg, .hrk-menu svg {
     min-width: 1.5rem;
