@@ -121,9 +121,6 @@
 .hrk-menu > .hrk-leaf {
     margin-right: 1rem;
 }
-.hrk-menu-active {
-    border-radius: 0 .5rem .5rem .5rem;
-}
 .hrk-bar-extramenu li {
     list-style-type: none;
 }
@@ -147,21 +144,19 @@
 /* dropdown menu containers */
 .hrk-menu > .hrk-tree > .hrk-tree-node .hrk-tree-children > .hrk-tree > .hrk-tree-node,
 .hrk-menu > .hrk-tree > .hrk-tree-node .hrk-leaf {
-    width: 100%;
+    min-width: 80%;
 }
 /* dropdown menu items */
 .hrk-menu > .hrk-tree > .hrk-tree-node .hrk-tree-children > .hrk-tree > .hrk-tree-node > *,
 .hrk-menu > .hrk-tree > .hrk-tree-node .hrk-leaf > * {
     min-width: 80%;
 }
-.hrk-bar-item a:hover,
-.hrk-bar-item span.hrk-a:hover,
-.hrk-menu > .hrk-leaf:hover,
-.hrk-bar-toggle + label:hover,
-.hrk-menu > .hrk-tree > .hrk-tree-node > a:hover,
-.hrk-menu > .hrk-tree > .hrk-tree-node > span.hrk-a:hover{
-    background: rgba(50, 50, 50, .1);
-    border-radius: 0 .5rem .5rem .5rem;
+.hrk-bar-item > a:hover,
+.hrk-bar-item > span.hrk-a:hover,
+.hrk-menu .hrk-leaf:hover,
+.hrk-bar-toggle + label:hover {
+    background: rgba(120, 120, 120, .2);
+    border-radius: .5rem .5rem .5rem .5rem;
 }
 .hrk-tree-node .hrk-tree-children a,
 .hrk-tree-node .hrk-tree-children span.hrk-a,
@@ -174,12 +169,12 @@
     display: inline-block;
     padding: .5rem;
 }
-.hrk-navbar > .hrk-bar-item .hrk-bar-extramenu a,
-.hrk-navbar > .hrk-bar-item .hrk-bar-extramenu span.hrk-a,
-.hrk-tree-node .hrk-tree-children a:hover,
-.hrk-tree-node .hrk-tree-children span.hrk-a:hover {
-    background: rgba(100,100,100,.1);
-    border-radius: 0 .5rem .5rem .5rem;
+
+.hrk-tree:hover,
+.hrk-tree:hover > .hrk-node > a,
+.hrk-tree:hover > .hrk-node > span.hrk-a {
+    background: rgba(120,120,120,.2);
+    border-radius: 0.5rem .5rem 0.5rem 0;
 }
 .hrk-tree-node > .hrk-tree-children {
     margin-left: -1rem;
@@ -208,7 +203,7 @@
 .hrk-bar-extramenu ul,
 .hrk-tree-children > .hrk-leaf {
     margin-left: 1rem;
-    min-width: 10rem;
+/*    min-width: 10rem;*/
 }
 .hrk-menu > .hrk-leaf {
     margin-left: 1rem;
@@ -220,11 +215,12 @@
     order: 5;
     flex: 1 100%;
     position: relative;
-    background: rgba(245,245,245,.9);
+    background: rgba(245,245,245,.98);
     border: .1rem solid #eee;
 }
 .hrk-menu > .hrk-tree > .hrk-tree-node > .hrk-tree-children,
-.hrk-bar-item .hrk-bar-extramenu {
+.hrk-bar-item .hrk-bar-extramenu,
+.hrk-menu-active {
     border-radius: 0 .5rem .5rem .5rem;
 }
 .hrk-bar-last > .hrk-tree > .hrk-tree-node > .hrk-tree-children {
