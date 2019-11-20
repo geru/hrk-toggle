@@ -68,10 +68,6 @@
     display: flex;
     flex-direction: row;
 }
-.hrk-menu {
-    /* padding-bottom: .5rem; */
-    border-radius: 0 .5rem .5rem .5rem;
-}
 .hrk-toggle + label {
     display: inline;
     cursor: pointer;
@@ -152,11 +148,9 @@
     min-width: 80%;
 }
 .hrk-bar-item > a:hover,
-.hrk-bar-item > span.hrk-a:hover,
-.hrk-menu .hrk-leaf:hover,
-.hrk-bar-toggle + label:hover {
+.hrk-bar-item > span.hrk-a:hover {
     background: rgba(120, 120, 120, .2);
-    border-radius: .5rem .5rem .5rem .5rem;
+    /* border-radius: .5rem .5rem .5rem .5rem; */
 }
 .hrk-tree-node .hrk-tree-children a,
 .hrk-tree-node .hrk-tree-children span.hrk-a,
@@ -170,9 +164,12 @@
     padding: .5rem;
 }
 
+.hrk-navbar > label:hover,
 .hrk-tree:hover,
 .hrk-tree:hover > .hrk-node > a,
-.hrk-tree:hover > .hrk-node > span.hrk-a {
+.hrk-tree:hover > .hrk-node > span.hrk-a,
+.hrk-menu .hrk-leaf:hover,
+.hrk-bar > label:hover {
     background: rgba(120,120,120,.2);
     border-radius: 0.5rem .5rem 0.5rem 0;
 }
@@ -193,6 +190,7 @@
 .hrk-navbar > .hrk-menu > .hrk-tree > label,
 .hrk-navbar > .hrk-menu > .hrk-leaf > * {
     padding-top: 1rem;
+/*    border-radius: .5rem; */
 }
 .hrk-tree-node, .hrk-leaf {
     display: inline-block;
@@ -215,7 +213,7 @@
     order: 5;
     flex: 1 100%;
     position: relative;
-    background: rgba(245,245,245,.98);
+    background: rgba(255,255,255,.98);
     border: .1rem solid #eee;
 }
 .hrk-menu > .hrk-tree > .hrk-tree-node > .hrk-tree-children,
@@ -346,7 +344,7 @@
     .hrk-tree-children {
         position: absolute;
         /*width: 16rem;*/
-        border-radius: 0 .5rem .5rem .5rem;
+        /*border-radius: 0 .5rem .5rem .5rem;*/
     }
     .hrk-tree-children .hrk-tree-children {
         position: relative;
