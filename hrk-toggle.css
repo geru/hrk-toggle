@@ -89,6 +89,7 @@
 }
 .hrk-bar-perm, .hrk-bar-toggle + label { /* nonresponsive parts of the menu are just flex */
     flex: 1 0;
+    z-index: 100; /* allow it to be forefront even if some special effects are happening */
 }
 .hrk-bar-first {
     order: -1;
