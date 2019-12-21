@@ -71,9 +71,9 @@
 .hrk-toggle + label {
     display: inline;
     cursor: pointer;
-    width: 0.8rem;
+/*    width: 1.8rem;*/
     align-self: flex-start;
-    padding: .5rem 0.1rem;
+    padding: .5rem;
     text-align: center;
     font-size: small;
     color: black;
@@ -134,8 +134,7 @@
     text-decoration: none;
     display: inline-block;
 }
-.hrk-menu .hrk-tree > .hrk-tree-node > *,
-.hrk-menu .hrk-leaf > * {
+.hrk-menu > .hrk-leaf > * {
     padding: 0.5rem;
 }
 /* dropdown menu containers */
@@ -176,7 +175,10 @@
 }
 .hrk-tree-node > .hrk-tree-children {
     margin-left: -1rem;
-    padding-left: .5rem;
+}
+.hrk-menu > .hrk-tree > .hrk-tree-node > .hrk-tree-children {
+    margin-left: -2rem;
+    padding-left: 1rem;
 }
 
 /* toggle */
@@ -201,7 +203,7 @@
 }
 .hrk-bar-extramenu ul,
 .hrk-tree-children > .hrk-leaf {
-    margin-left: 1rem;
+    margin-left: 2rem;
 /*    min-width: 10rem;*/
 }
 .hrk-menu > .hrk-leaf {
