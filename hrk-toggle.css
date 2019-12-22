@@ -69,9 +69,9 @@
     flex-direction: row;
 }
 .hrk-toggle + label {
-    display: inline;
+    display: inline-block;
     cursor: pointer;
-/*    width: 1.8rem;*/
+    width: 1.5rem;
     align-self: flex-start;
     padding: .5rem;
     text-align: center;
@@ -140,13 +140,13 @@
 /* dropdown menu containers */
 .hrk-menu > .hrk-tree > .hrk-tree-node .hrk-tree-children > .hrk-tree > .hrk-tree-node,
 .hrk-menu > .hrk-tree > .hrk-tree-node .hrk-leaf {
-    min-width: 80%;
+   /* min-width: 80%; */
 }
-/* dropdown menu items */
+/* dropdown menu items
 .hrk-menu > .hrk-tree > .hrk-tree-node .hrk-tree-children > .hrk-tree > .hrk-tree-node > *,
 .hrk-menu > .hrk-tree > .hrk-tree-node .hrk-leaf > * {
     min-width: 80%;
-}
+} */
 .hrk-bar-item > a:hover,
 .hrk-bar-item > span.hrk-a:hover {
     background: rgba(120, 120, 120, .2);
@@ -161,9 +161,19 @@
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-decoration: none;
     display: inline-block;
-    padding: .5rem;
 }
-
+.hrk-tree-node .hrk-leaf a,
+.hrk-tree-node .hrk-leaf span.hrk-a {
+    padding: .5rem .7rem;
+}
+.hrk-tree-node .hrk-tree > .hrk-tree-node > a,
+.hrk-tree-node .hrk-tree > .hrk-tree-node > span.hrk-a,
+.hrk-navbar > .hrk-bar-item .hrk-bar-extramenu a,
+.hrk-navbar > .hrk-bar-item .hrk-bar-extramenu span.hrk-a,
+.hrk-menu > .hrk-tree > .hrk-tree-node > a,
+.hrk-menu > .hrk-tree > .hrk-tree-node > span.hrk-a { /* all navbar lower bar links get look and feel */
+    padding: .5rem .5rem .5rem 0;
+}
 .hrk-navbar > label:hover,
 .hrk-tree:hover,
 .hrk-tree:hover > .hrk-node > a,
@@ -178,7 +188,7 @@
 }
 .hrk-menu > .hrk-tree > .hrk-tree-node > .hrk-tree-children {
     margin-left: -2rem;
-    padding-left: 1rem;
+    /* padding-left: 1rem; */
 }
 
 /* toggle */
@@ -192,8 +202,11 @@
 .hrk-navbar > .hrk-menu > .hrk-tree > .hrk-tree-node > span.hrk-a,
 .hrk-navbar > .hrk-menu > .hrk-tree > label,
 .hrk-navbar > .hrk-menu > .hrk-leaf > * {
-    padding-top: 1rem;
-/*    border-radius: .5rem; */
+    /*   padding-top: 1rem;
+    border-radius: .5rem; */
+}
+.hrk-navbar > .hrk-menu > .hrk-tree > label {
+    margin-left: -2.5rem;
 }
 .hrk-tree-node, .hrk-leaf {
     display: inline-block;
@@ -203,11 +216,11 @@
 }
 .hrk-bar-extramenu ul,
 .hrk-tree-children > .hrk-leaf {
-    margin-left: 2rem;
+    margin-left: 1.85rem;
 /*    min-width: 10rem;*/
 }
 .hrk-menu > .hrk-leaf {
-    margin-left: 1rem;
+    margin-left: 2rem;
     margin-right: .5rem;
 }
 .hrk-bar-extramenu,
@@ -234,19 +247,34 @@
     display: flex;
     flex-direction: column;
 }
+.hrk-toggle-close-menu > input[type="radio"].hrk-toggle:checked + label {
+    display: inline-block;
+}
+.hrk-toggle-close-menu + input[type="radio"].hrk-toggle:checked + label {
+    /* display: none; */
+}
+.hrk-toggle-close-menu > input[type="radio"].hrk-toggle + label {
+    /* margin-left: -1.85rem; */
+}
 .hrk-toggle-close-menu {
-    position: absolute;
-    right: -1rem;
-/*    z-index: 10; */
+    align-self: flex-start;
 }
 .hrk-toggle-close-menu > label {
-    width: 1rem;
+    padding: .5rem;
 }
 
 .hrk-toggle-close-menu > .hrk-toggle + .hrk-toggle-fmt-x:before {
-    content: 'x';
+    content: '⨯'; /*'⋁'; /*'▾''▽'; /*'x';*/
 }
 .hrk-toggle-close-menu > .hrk-toggle:checked + .hrk-toggle-fmt-x {
+    display: inline-block;
+}
+.hrk-toggle-close-menu > .hrk-toggle + .hrk-toggle-fmt-caret:before {
+    font-family: "Times New Roman", serif;
+    content: '▼';
+/*    content: '⨯'; /*'⋁'; /*'▾''▽'; /*'x';*/
+}
+.hrk-toggle-close-menu > .hrk-toggle:checked + .hrk-toggle-fmt-caret {
     display: inline-block;
 }
 /* default opener / closer is just text +/- */
@@ -276,7 +304,10 @@
 .hrk-toggle:checked + label.hrk-toggle-fmt-onoff > .hrk-toggle-fmt-onoff-off {
     display: initial;
 }
-
+/* make off toggle not display in favor of close button when radio */
+input[type="radio"].hrk-toggle:checked + label {
+    display: none;
+}
 .hrk-toggle + label.hrk-toggle-fmt-ellipsis:before {
     font-weight: 900;
     content: "...";
@@ -304,6 +335,10 @@
     min-width: 1.5rem;
 }
 
+.hrk-navbar > label {
+    max-width: 15%;
+}
+
 /* media query non-responsive for big screen */
 @media screen and (min-width: 75rem) {
 
@@ -320,6 +355,24 @@
         flex-flow: row;
         padding-bottom: 0;
     }
+    .hrk-navbar > label {
+        max-width: unset;
+    }
+    .hrk-navbar > .hrk-menu > .hrk-tree > .hrk-toggle + label,
+    .hrk-navbar > .hrk-menu > .hrk-tree > .hrk-toggle-close-menu > label {
+        width: unset;
+    }
+    .hrk-navbar > .hrk-menu > .hrk-tree > label {
+        margin-left: -1.85rem;
+    }
+    .hrk-toggle-close-menu {
+        /*    position: absolute;
+            right: -1rem;
+        /*    z-index: 10;
+            padding-top: .5rem;*/
+        align-self: center;
+    }
+
     .hrk-menu-responsive {
         position: static;
     }
