@@ -183,6 +183,10 @@
     background: rgba(120,120,120,.2);
     border-radius: 0.5rem .5rem 0.5rem 0;
 }
+.hrk-navbar > .hrk-menu > .hrk-tree > label:hover {
+    background: rgba(220,220,220,1); /* label needs to be opaque to cover close toggle */
+    border-radius: 0.5rem .5rem 0.5rem 0;
+}
 .hrk-tree-node > .hrk-tree-children {
     margin-left: -1rem;
 }
@@ -207,6 +211,7 @@
 }
 .hrk-navbar > .hrk-menu > .hrk-tree > label {
     margin-left: -2.5rem;
+    background: rgba(250,250,250,1);
 }
 .hrk-tree-node, .hrk-leaf {
     display: inline-block;
