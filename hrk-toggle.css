@@ -109,7 +109,7 @@
 }
 .hrk-navbar > .hrk-menu-responsive {
     position: absolute;
-    z-index: 990 !important;
+    /* z-index: 990 !important; */
 }
 .hrk-navbar > .hrk-menu {
     top: 3rem;
