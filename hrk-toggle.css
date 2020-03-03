@@ -62,7 +62,7 @@
     flex: 1 100%;
     flex-direction: column;
     background: inherit;
-    z-index: 50;
+    /* z-index: 50; */
 }
 .hrk-menu-perm {
     display: flex;
@@ -80,8 +80,8 @@
 }
 .hrk-bar-toggle:checked ~ .hrk-menu-responsive {  /* the responsive menu is labeled with class hrk-menu */
     display: flex;
-    background: inherit;
-    /* z-index: 10; */
+    /* background: inherit; */
+    z-index: 10;
     border: thin solid;
 }
 .hrk-bar-toggle + label:before { /* make sure the navbar toggle and label are a block */
@@ -251,12 +251,15 @@
 .hrk-toggle:checked ~ .hrk-tree-node > .hrk-tree-children {
     display: flex;
     flex-direction: column;
+    z-index: 50;
 }
 .hrk-toggle-close-menu > input[type="radio"].hrk-toggle:checked + label {
     display: inline-block;
+    z-index: 50;
 }
 .hrk-toggle-close-menu + input[type="radio"].hrk-toggle:checked + label {
     /* display: none; */
+    z-index: 50;
 }
 .hrk-toggle-close-menu > input[type="radio"].hrk-toggle + label {
     /* margin-left: -1.85rem; */
@@ -273,6 +276,7 @@
 }
 .hrk-toggle-close-menu > .hrk-toggle:checked + .hrk-toggle-fmt-x {
     display: inline-block;
+    z-index: 50;
 }
 .hrk-toggle-close-menu > .hrk-toggle + .hrk-toggle-fmt-caret:before {
     font-family: "Times New Roman", serif;
@@ -281,6 +285,7 @@
 }
 .hrk-toggle-close-menu > .hrk-toggle:checked + .hrk-toggle-fmt-caret {
     display: inline-block;
+    z-index: 50;
 }
 /* default opener / closer is just text +/- */
 .hrk-toggle + label.hrk-toggle-fmt-caret:before {
@@ -290,6 +295,7 @@
 .hrk-toggle:checked + label.hrk-toggle-fmt-caret:before {
     font-family: "Times New Roman", serif;
     content: '▼';
+    z-index: 50;
 }
 /* default opener / closer is just text +/- */
 .hrk-toggle + label.hrk-toggle-fmt-plusminus:before {
@@ -297,6 +303,7 @@
 }
 .hrk-toggle:checked + label.hrk-toggle-fmt-plusminus:before {
     content: '–'; /*'—';*/
+    z-index: 50;
 }
 /* toggle option: put svg icons, text or anything else into on/off spans */
 .hrk-toggle:checked + label.hrk-toggle-fmt-onoff > .hrk-toggle-fmt-onoff-on {
@@ -320,6 +327,7 @@ input[type="radio"].hrk-toggle:checked + label {
 .hrk-toggle:checked + label.hrk-toggle-fmt-ellipsis:before {
     font-weight: 900;
     content: "X";
+    z-index: 50;
 }
 .hrk-toggle-fmt-paginav {
     margin-right: 0;
@@ -331,6 +339,7 @@ input[type="radio"].hrk-toggle:checked + label {
 .hrk-toggle:checked + label.hrk-toggle-fmt-paginav:before {
     font-weight: 900;
     content: "X"; /* ▵ */
+    z-index: 50;
 }
 .hrk-toggle + label {
     font-size: 100%;
