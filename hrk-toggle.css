@@ -69,9 +69,9 @@
 .hrk-toggle + label {
     display: inline-block;
     cursor: pointer;
-    width: 1.5rem;
+    width: 1rem;
     align-self: flex-start;
-    padding: .5rem;
+    padding: .6rem .5rem .5rem .5rem;
     text-align: center;
     font-size: small;
     color: black;
@@ -196,8 +196,8 @@
 }
 .hrk-bar-extramenu ul,
 .hrk-tree-children > .hrk-leaf {
-    margin-left: 2rem;
-}
+    padding-left: 1.3rem;
+}   
 .hrk-menu > .hrk-leaf {
     margin-left: 2rem;
     margin-right: .5rem;
