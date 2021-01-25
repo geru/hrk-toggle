@@ -341,7 +341,7 @@ input[type="radio"].hrk-toggle:checked + label {
     }
     .hrk-navbar > .hrk-menu > .hrk-tree > .hrk-toggle + label,
     .hrk-navbar > .hrk-menu > .hrk-tree > .hrk-toggle-close-menu > label {
-        width: unset;
+        width: 1rem;
     }
     .hrk-navbar > .hrk-menu > .hrk-tree > label {
         margin-left: -2rem;
