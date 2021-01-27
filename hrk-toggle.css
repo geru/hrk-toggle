@@ -71,7 +71,7 @@
     cursor: pointer;
     width: 1rem;
     align-self: flex-start;
-    padding: .6rem .5rem .5rem .5rem;
+    padding: .5rem;
     text-align: center;
     font-size: small;
     color: black;
@@ -158,6 +158,7 @@
     display: inline-block;
     width: 100%;
     height: 100%;
+    box-sizing: border-box;
 }
 .hrk-tree-node .hrk-tree > .hrk-tree-node > a,
 .hrk-tree-node .hrk-tree > .hrk-tree-node > span.hrk-a,
@@ -168,6 +169,7 @@
     padding: .5rem .5rem .5rem 0;
     width: 100%;
     height: 100%;
+    box-sizing: border-box;
 }
 .hrk-navbar > label:hover,
 .hrk-tree:hover,
@@ -205,7 +207,7 @@
 }
 .hrk-bar-extramenu ul,
 .hrk-tree-children > .hrk-leaf {
-    padding-left: .8rem;
+    padding-left: 1rem;
 }
 .hrk-menu > .hrk-leaf {
     margin-left: 2rem;
@@ -222,7 +224,9 @@
 }
 .hrk-bar-last > .hrk-tree > .hrk-tree-node > .hrk-tree-children {
     position: fixed;
-    right: 1rem;
+    right: 0;
+    padding-right: .5rem;
+    padding-left: .5rem;
 }
 
 .hrk-bar-extramenu,
@@ -344,7 +348,7 @@ input[type="radio"].hrk-toggle:checked + label {
     .hrk-tree-node .hrk-leaf a,
     .hrk-tree-node .hrk-leaf span.hrk-a {
         margin-left: 0rem;
-        padding: .5rem .7rem;
+        padding: .5rem .8rem;
     }
     .hrk-menu > .hrk-leaf {
         padding: 0 .75rem;
