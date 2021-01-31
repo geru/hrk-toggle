@@ -223,10 +223,14 @@
     border: .1rem solid #eee;
 }
 .hrk-bar-last > .hrk-tree > .hrk-tree-node > .hrk-tree-children {
-    position: fixed;
-    right: 0;
+    position: absolute;
+    /* right: 0; */
     padding-right: .5rem;
     padding-left: .5rem;
+}
+.hrk-navbar > .hrk-bar-perm.hrk-bar-last > .hrk-tree > .hrk-tree-node > .hrk-tree-children,
+.hrk-bar-last > .hrk-tree > .hrk-tree-node > .hrk-tree-children:last-child {
+    right: 0;
 }
 
 .hrk-bar-extramenu,
