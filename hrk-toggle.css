@@ -35,6 +35,9 @@
 .hrk-padding-medium {
     padding: 1rem;
 }
+.hrk-hidden {
+    display: none !important;
+}
 
 
 /* responsive navbar */
