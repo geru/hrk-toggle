@@ -126,7 +126,7 @@
 .hrk-menu > .hrk-tree > .hrk-tree-node > a, .hrk-menu > .hrk-tree > .hrk-tree-node > span.hrk-a,
 .hrk-menu .hrk-leaf > *,
 .hrk-bar-item a, .hrk-bar-item span.hrk-a {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*//*this line doesn't play nicely with uikit, causes oscillation*/
     text-decoration: none;
     display: inline-block;
 }
