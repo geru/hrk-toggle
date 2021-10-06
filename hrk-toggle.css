@@ -426,9 +426,13 @@ input[type="radio"].hrk-toggle:checked + label {
         flex: 1 100%;
         top: 0;
     }
-    .hrk-tree-node, .hrk-leaf,
-    .hrk-menu > .hrk-tree > .hrk-tree-node > span.hrk-a { /* top-level inactive item */
+    .hrk-tree-node,
+    .hrk-menu > .hrk-tree > .hrk-tree-node > * { /* top-level inactive item */
         width: auto;
+    }
+    .hrk-level-0 .hrk-leaf {
+        width: 100%;
+        box-sizing: border-box;
     }
     .hrk-bar-last {
         justify-content: flex-end;
