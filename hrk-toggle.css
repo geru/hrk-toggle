@@ -323,7 +323,7 @@ input[type="radio"].hrk-toggle:checked + label {
     z-index: 50;
 }
 .hrk-toggle + label {
-    font-size: 100%;
+    font-size: 99%; /* if 100% bumps it out by a pixel, don't know why */
     color: rgba(120, 120, 120, .8);
 }
 .hrk-navbar svg, .hrk-menu svg {
