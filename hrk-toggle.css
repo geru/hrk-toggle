@@ -407,6 +407,9 @@ input[type="radio"].hrk-toggle:checked + label {
         border-radius: 0;
         width: auto;
     }
+    .hrk-bar .hrk-leaf {
+        width: 100%;
+    }
     .hrk-navbar > .hrk-menu-responsive {
         position: static;
     }
