@@ -408,7 +408,7 @@ input[type="radio"].hrk-toggle:checked + label {
         width: auto;
     }
     .hrk-bar .hrk-leaf {
-        width: 100%;
+        width: auto;
     }
     .hrk-navbar > .hrk-menu-responsive {
         position: static;
