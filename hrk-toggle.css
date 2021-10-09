@@ -199,8 +199,10 @@
     vertical-align: middle;
     -webkit-backface-visibility: hidden;
     align-self: flex-start;
-    width: 100%;
     box-sizing: border-box;
+}
+.hrk-bar .hrk-level-1 .hrk-leaf, .hrk-bar .hrk-level-1 .hrk-tree-node {
+    width: 100%;
 }
 .hrk-bar-extramenu ul,
 .hrk-tree-children > .hrk-leaf {
