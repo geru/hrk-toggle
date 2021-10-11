@@ -67,6 +67,7 @@
     background: inherit;
 }
 .hrk-menu-perm {
+    flex: auto;
     display: flex;
     flex-direction: row;
 }
@@ -198,11 +199,12 @@
     display: inline-block;
     vertical-align: middle;
     -webkit-backface-visibility: hidden;
+    width: 100%;
     align-self: flex-start;
     box-sizing: border-box;
 }
-.hrk-bar .hrk-level-1 .hrk-leaf, .hrk-bar .hrk-level-1 .hrk-tree-node {
-    width: 100%;
+.hrk-menu.hrk-bar-perm > .hrk-child {
+    width: inherit;
 }
 .hrk-bar-extramenu ul,
 .hrk-tree-children > .hrk-leaf {
@@ -434,10 +436,6 @@ input[type="radio"].hrk-toggle:checked + label {
     .hrk-tree-node,
     .hrk-menu > .hrk-tree > .hrk-tree-node > * { /* top-level inactive item */
         width: auto;
-    }
-    .hrk-level-0 .hrk-leaf {
-        width: 100%;
-        box-sizing: border-box;
     }
     .hrk-bar-last {
         justify-content: flex-end;
